@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"My App"</string>
+    <string name="consult">CONSULT</string>
+    <string name="consult_spe">Consult Specialist Doctors \nSecurely And Privately</string>
+    <string name="dr_mosia_gl">Dr. Mosia Gloria</string>
+    <string name="sr_psycholo">Sr. Psychologist</string>
+    <string name="patients">Patients</string>
+    <string name="experience">Experience</string>
+    <string name="rating">Rating</string>
+    <string name="k">1.4K</string>
+    <string name="yr">5 yr</string>
+    <string name="some_id">4.0</string>
+    <string name="about">About</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec quis purus amet sollicitudin nunc quis.</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>
