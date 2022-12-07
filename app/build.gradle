@@ -1,5 +1,9 @@
 plugins {
     id 'com.android.application'
+
+    // Add the Google services Gradle plugin
+    id 'com.google.gms.google-services'
+
 }
 configurations {
     all {
@@ -45,4 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-storage'
 }
