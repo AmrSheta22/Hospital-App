@@ -116,7 +116,7 @@
                 <CheckBox android:id="@+id/checkbox_meat1"
                         android:layout_width="fill_parent"
                         android:layout_height="40dp"
-                        android:text="fisrt item"
+                        android:text="not an item, it's a ghost"
                         android:onClick="onCheckboxClicked"
                         android:textColor="#019874"
                         android:textSize="15dp"
