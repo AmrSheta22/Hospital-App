@@ -209,7 +209,14 @@
                     android:textColor="#019874"
                     android:textSize="15dp"
                     android:textStyle="bold"/>
-
+                <CheckBox android:id="@+id/checkbox_meat13"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:text="item1 with brief description of the med"
+                    android:onClick="onCheckboxClicked"
+                    android:textColor="#019874"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
