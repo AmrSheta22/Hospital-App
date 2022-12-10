@@ -399,17 +399,16 @@
             android:id="@+id/textView4"
             android:layout_width="176dp"
             android:layout_height="42dp"
-            android:layout_above="@+id/footer"
             android:layout_below="@+id/Horizontal_line"
             android:layout_alignStart="@+id/Horizontal_line"
             android:layout_alignEnd="@+id/Horizontal_line"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="177dp"
-            android:layout_marginBottom="516dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="-11dp"
+            android:layout_marginEnd="194dp"
             android:text="TextView"
-            android:textColor="#036362"
-            android:textSize="20dp" />
+            android:textColor="#019874"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
