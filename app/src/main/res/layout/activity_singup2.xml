@@ -82,7 +82,7 @@
         android:id="@+id/des"
         android:layout_width="0dp"
         android:layout_height="49dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:gravity="center_horizontal|top"
         android:text="where all your nightmare come ture"
         android:textColor="#019874"
@@ -97,7 +97,7 @@
         android:id="@+id/Chronic_Diseases"
         android:layout_width="411dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Chronic Diseases (use , to separate)"
@@ -116,7 +116,7 @@
         android:id="@+id/Address"
         android:layout_width="409dp"
         android:layout_height="56dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Address"
@@ -125,7 +125,7 @@
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/Chronic_Diseases" />
 
@@ -133,7 +133,7 @@
         android:id="@+id/Age"
         android:layout_width="409dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Age"
@@ -164,12 +164,13 @@
         android:id="@+id/Gender"
         android:layout_width="392dp"
         android:layout_height="61dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background">
+        app:layout_constraintTop_toBottomOf="@+id/des">
 
         <RadioButton
             android:id="@+id/Female"

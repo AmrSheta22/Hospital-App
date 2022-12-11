@@ -80,14 +80,7 @@ android:layout_height="match_parent">
             />
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_weight="2"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/nurse"
-        />
-</LinearLayout>
+    </LinearLayout>
 
     <View
         android:id="@+id/Horizontal_line"
