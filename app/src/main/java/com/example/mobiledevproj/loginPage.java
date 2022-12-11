@@ -52,14 +52,6 @@ public class loginPage extends AppCompatActivity {
                     PharmaView();
                 }
                 else {
-                    Bill d1 = new Bill("/here/", "1", "1");
-                    ref.child("bill").child("1").setValue(d1);
-
-                    //meds contain list of ids (medication nodes)
-                    String[] meds = {"1", "2"};
-                    List nameList = new ArrayList<String>(Arrays.asList(meds));
-                    Bill d2 = new Bill(nameList, "1", "1");
-                    ref.child("bill").child("2").setValue(d2);
                     PatientView();
 
                 }
