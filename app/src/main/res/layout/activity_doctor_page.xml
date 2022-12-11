@@ -84,12 +84,6 @@
                     android:textStyle="italic" />
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="2"
-                android:src="@drawable/nurse" />
         </LinearLayout>
         <View
             android:id="@+id/Horizontal_line"

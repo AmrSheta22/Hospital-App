@@ -22,6 +22,7 @@ public class doctors extends AppCompatActivity {
         btn = findViewById(R.id.imb1);
         btn.setOnClickListener(view -> {
             Intent i = new Intent(this, DoctorProfile.class);
+            i.putExtra("key",x);
             startActivity(i);
         });
         ImageButton btn15;

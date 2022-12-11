@@ -146,7 +146,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Hospital"
-                        android:textSize="30sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <ImageButton
@@ -184,8 +184,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="pharmacy"
-                        android:textSize="30sp"
+                        android:text="Pharmacy"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <ImageButton
