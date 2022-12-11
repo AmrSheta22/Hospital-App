@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginPage">
-
+    tools:context=".Singup2">
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -95,51 +94,32 @@
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <EditText
-        android:id="@+id/username_p"
+        android:id="@+id/Chronic_Diseases"
         android:layout_width="411dp"
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="User name"
+        android:hint="Chronic Diseases (use , to separate)"
+
         android:inputType="textPersonName"
 
         android:minHeight="48dp"
-
-        android:paddingLeft="50dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/user_email_p"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/user_email_p"
-        app:layout_constraintTop_toBottomOf="@+id/user_email_p" />
-
-    <EditText
-        android:id="@+id/user_email_p"
-        android:layout_width="411dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/input_bg"
-        android:ems="10"
-
-        android:hint="email"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/des" />
+        app:layout_constraintTop_toBottomOf="@+id/Gender" />
 
     <EditText
-        android:id="@+id/password_p"
+        android:id="@+id/Address"
         android:layout_width="409dp"
         android:layout_height="56dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Address"
         android:inputType="textPassword"
 
         android:paddingLeft="50dp"
@@ -147,38 +127,61 @@
         app:layout_constraintEnd_toEndOf="@+id/background"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toBottomOf="@+id/username_p" />
+        app:layout_constraintTop_toBottomOf="@+id/Chronic_Diseases" />
 
     <EditText
-        android:id="@+id/confirm_password_p"
+        android:id="@+id/Age"
         android:layout_width="409dp"
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="confirm Password"
+        android:hint="Age"
         android:inputType="textPassword"
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/password_p"
+        app:layout_constraintEnd_toEndOf="@+id/Address"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/password_p"
-        app:layout_constraintTop_toBottomOf="@+id/password_p" />
+        app:layout_constraintStart_toStartOf="@+id/Address"
+        app:layout_constraintTop_toBottomOf="@+id/Address" />
 
     <Button
-        android:id="@+id/log_in_p"
+        android:id="@+id/Register"
         android:layout_width="407dp"
         android:layout_height="66dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/input_bg"
-        android:text="Next"
+        android:text="Register"
         app:backgroundTint="#019874"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm_password_p"
+        app:layout_constraintTop_toBottomOf="@+id/Age"
         app:layout_constraintVertical_bias="0.404" />
 
+    <RadioGroup
+        android:id="@+id/Gender"
+        android:layout_width="392dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/input_bg"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background">
+
+        <RadioButton
+            android:id="@+id/Female"
+            android:layout_width="192dp"
+            android:layout_height="match_parent"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/Male"
+            android:layout_width="165dp"
+            android:layout_height="match_parent"
+            android:text="Male" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
