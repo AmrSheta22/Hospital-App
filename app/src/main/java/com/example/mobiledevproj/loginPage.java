@@ -1,28 +1,43 @@
 package com.example.mobiledevproj;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class loginPage extends AppCompatActivity {
-
+    // Write a message to the database
+    DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+    Patient p1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
         TextView btn = (TextView) findViewById(R.id.textView2);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(loginPage.this, signupPage.class));
             }
         });
+
         EditText txt = findViewById(R.id.username_p);
         Button btn2;
         btn2 = findViewById(R.id.log_in_p);
@@ -38,6 +53,7 @@ public class loginPage extends AppCompatActivity {
                 }
                 else {
                     PatientView();
+
                 }
             }
         });

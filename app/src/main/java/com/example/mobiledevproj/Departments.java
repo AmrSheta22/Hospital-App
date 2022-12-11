@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 
 public class Departments extends AppCompatActivity {
 
@@ -14,25 +16,29 @@ public class Departments extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specialties);
-        Button btn0, btn1, btn2, btn3, btn4;
-        btn0 = findViewById(R.id.button);
-        btn1 = findViewById(R.id.button1);
-        btn2 = findViewById(R.id.button2);
-        btn3 = findViewById(R.id.button3);
-        btn4 = findViewById(R.id.button4);
+        LinearLayout lout1,lout2,lout3,lout4,lout5;
+        lout1 = findViewById(R.id.linearlayout1);
+        lout2 = findViewById(R.id.linearlayout2);
+        lout3 = findViewById(R.id.linearlayout3);
+        lout4 = findViewById(R.id.linearlayout4);
+        lout5 = findViewById(R.id.linearlayout5);
         final View.OnClickListener mListener = new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(Departments.this,doctors.class);
-                // This below line sends Key- btnText and Value- Apple
-                //i.putExtra("btnText","Apple");
+                LinearLayout l = (LinearLayout) v;
+                String s = getResources().getResourceEntryName(l.getId());
+                String id = "textView"+s.substring(s.length() -1);
+                int resID = getResources().getIdentifier(id, "id", getPackageName());
+                TextView txt = findViewById(resID);
+                i.putExtra("btnText", txt.getText().toString());
                 startActivity(i);
-                };
+            };
         };
-        btn0.setOnClickListener(mListener);
-        btn1.setOnClickListener(mListener);
-        btn2.setOnClickListener(mListener);
-        btn3.setOnClickListener(mListener);
-        btn4.setOnClickListener(mListener);
+        lout1.setOnClickListener(mListener);
+        lout2.setOnClickListener(mListener);
+        lout3.setOnClickListener(mListener);
+        lout4.setOnClickListener(mListener);
+        lout5.setOnClickListener(mListener);
         ImageButton btn15;
         btn15 = findViewById(R.id.imageButton2);
         btn15.setOnClickListener(view -> {
