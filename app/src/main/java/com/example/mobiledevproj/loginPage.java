@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
@@ -37,8 +40,14 @@ public class loginPage extends AppCompatActivity {
                 startActivity(new Intent(loginPage.this, signupPage.class));
             }
         });
-
+        String regexPassword = ".{7,}";
         EditText txt = findViewById(R.id.username_p);
+        EditText lol = findViewById(R.id.password_p);
+        AwesomeValidation V2 = new AwesomeValidation(ValidationStyle.BASIC);
+        V2.addValidation(this, R.id.username_p, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
+        V2.addValidation(this,R.id.password_p,regexPassword,R.string.invalid_password);
+        V2.addValidation(this,R.id.password_p,RegexTemplate.NOT_EMPTY,R.string.Empty_Password);
+
         Button btn2;
         btn2 = findViewById(R.id.log_in_p);
         btn2.setOnClickListener(new View.OnClickListener() {
