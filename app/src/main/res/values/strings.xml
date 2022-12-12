@@ -21,6 +21,16 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="invalid_email">This Email is wrong</string>
+    <string name="invalid_name">ur name is not Null dear</string>
+    <string name="Empty_Email">ur Email is not Null dear</string>
+    <string name="invalid_password">"at least 7 charaters "</string>
+    <string name="invalid_confirm_password">not the same password dear</string>
+    <string name="Empty_Password">u have to be passworded</string>
+    <string name="Empty_Confirm_Password">confirm ur passwordation dear</string>
+    <string name="invalid_Address">We do not accept homeless people cuz they are poor and do not pay</string>
+    <string name="invalid_Age">we only accept born people get born and come back</string>
+    <string name="invalid_age">go to graveyard already</string>
 
 
 </resources>

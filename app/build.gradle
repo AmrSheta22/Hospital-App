@@ -52,4 +52,6 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
     implementation platform('com.google.firebase:firebase-bom:31.1.0')
     implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.basgeekball:awesome-validation:4.2'
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 }

@@ -102,7 +102,7 @@
         android:ems="10"
         android:hint="Chronic Diseases (use , to separate)"
 
-        android:inputType="textPersonName"
+        android:inputType="textLongMessage|textPersonName"
 
         android:minHeight="48dp"
         android:paddingLeft="50dp"
@@ -120,7 +120,7 @@
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textPassword"
+        android:inputType="textLongMessage|textPersonName"
 
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
@@ -137,7 +137,8 @@
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Age"
-        android:inputType="textPassword"
+        android:inputType="number"
+
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/Address"
