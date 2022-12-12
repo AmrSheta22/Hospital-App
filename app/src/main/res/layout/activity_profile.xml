@@ -34,17 +34,7 @@
         android:orientation="horizontal"
         android:weightSum="5">
 
-       <Spinner
-           android:id="@+id/spinner_languages"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="20dp"
-           android:layout_marginLeft="10dp"
-           android:layout_weight="1"
-           android:background="@drawable/ic_baseline_apps_24"
-           android:spinnerMode="dropdown" />
-
-       <View
+        <View
 
            android:layout_width="1dp"
            android:layout_height="match_parent"
@@ -81,14 +71,7 @@
            />
            </LinearLayout>
 
-       <ImageView
-           android:layout_width="100dp"
-           android:layout_height="50dp"
-           android:layout_weight="2"
-           android:layout_marginTop="10dp"
-           android:src="@drawable/nurse"
-           />
-   </LinearLayout>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
