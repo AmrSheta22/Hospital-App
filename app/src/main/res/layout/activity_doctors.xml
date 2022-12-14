@@ -381,14 +381,14 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="176dp"
-            android:layout_height="42dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/Horizontal_line"
             android:layout_alignStart="@+id/Horizontal_line"
             android:layout_alignEnd="@+id/Horizontal_line"
             android:layout_marginStart="1dp"
             android:layout_marginTop="-11dp"
-            android:layout_marginEnd="194dp"
+            android:layout_marginEnd="120dp"
             android:text="TextView"
             android:textColor="#019874"
             android:textSize="24sp"
