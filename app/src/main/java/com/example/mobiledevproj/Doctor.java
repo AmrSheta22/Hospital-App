@@ -25,7 +25,12 @@ public class Doctor {
         this.numberOfPatients = numberOfPatients;
         this.email = email;
         this.age = age;
+
     }
+
+
+
+
 
 }
     //Doctor d1 = new Doctor("name", "1123456", "general", "haha@gmail.com", 11, 4.6, 500, 4);
