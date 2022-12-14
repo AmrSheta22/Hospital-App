@@ -55,12 +55,88 @@ public class loginPage extends AppCompatActivity {
             public void onClick(View v){
                 String the_text = txt.getText().toString();
                 if (the_text.equals("0")) {
+
                     DoctorView();
                 }
                 else if (the_text.equals("1")) {
                     PharmaView();
                 }
                 else {
+                    Doctor d1 = new Doctor("Ahmed", "ah1234567", "general", "DrAhmed@gmail.com", 40, 4.6, 500, 13);
+                    ref.child("doctors").child("1").setValue(d1);
+
+                    Doctor d2 = new Doctor("Mohamed", "mh1234567", "general", "DrMohamed@gmail.com", 45, 4.3, 420, 10);
+                    ref.child("doctors").child("2").setValue(d2);
+
+                    Doctor d3 = new Doctor("Hagar","ha1234567","general", "DrHagar@gmail.com",43,4,320,15);
+                    ref.child("doctors").child("3").setValue(d3);
+
+                    Doctor d4 = new Doctor("Sama", "sa1234567", "general", "DrSama@gmail.com", 27, 3.8, 200, 3);
+                    ref.child("doctors").child("4").setValue(d4);
+
+                    Doctor d5 = new Doctor("Ali","a1234567","general", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("5").setValue(d5);
+
+                    Doctor d6 = new Doctor("Mahmoud", "ma1234567", "neurology", "DrMahmoud@gmail.com", 40, 4.6, 500, 13);
+                    ref.child("doctors").child("6").setValue(d6);
+
+                    Doctor d7 = new Doctor("Yasmin","ya234567","neurology", "DrYasmin@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("7").setValue(d7);
+
+                    Doctor d8 = new Doctor("Mohamed", "mh1234567", "neurology", "DrMohamed@gmail.com", 45, 4.3, 420, 10);
+                    ref.child("doctors").child("8").setValue(d8);
+
+                    Doctor d9 = new Doctor("Hagar","ha1234567","neurology", "DrHagar@gmail.com",43,4,320,15);
+                    ref.child("doctors").child("9").setValue(d9);
+
+                    Doctor d10 = new Doctor("Sama", "sa1234567", "neurology", "DrSama@gmail.com", 27, 3.8, 200, 3);
+                    ref.child("doctors").child("10").setValue(d10);
+
+                    Doctor d11 = new Doctor("Ali","a1234567","cardiology", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("11").setValue(d11);
+
+                    Doctor d12 = new Doctor("Ali","a1234567","cardiology", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("12").setValue(d12);
+
+                    Doctor d13 = new Doctor("Ali","a1234567","cardiology", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("13").setValue(d13);
+
+                    Doctor d14 = new Doctor("Ali","a1234567","cardiology", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("14").setValue(d14);
+
+                    Doctor d15 = new Doctor("Ali","a1234567","cardiology", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("15").setValue(d15);
+
+                    Doctor d16 = new Doctor("Ali","a1234567","cancer care", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("16").setValue(d16);
+
+                    Doctor d17 = new Doctor("Ali","a1234567","cancer care", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("16").setValue(d16);
+
+                    Doctor d18 = new Doctor("Ali","a1234567","cancer care", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("16").setValue(d16);
+
+                    Doctor d19 = new Doctor("Ali","a1234567","cancer care", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("16").setValue(d19);
+
+                    Doctor d20 = new Doctor("Ali","a1234567","cancer care", "DrAli@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("20").setValue(d20);
+
+                    Doctor d21 = new Doctor("Naira","na1234567","orthopedic", "DrNaira@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("21").setValue(d21);
+
+                    Doctor d22 = new Doctor("Naira","na1234567","orthopedic", "DrNaira@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("22").setValue(d22);
+
+                    Doctor d23 = new Doctor("Naira","na1234567","orthopedic", "DrNaira@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("23").setValue(d23);
+
+                    Doctor d24 = new Doctor("Naira","na1234567","orthopedic", "DrNaira@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("24").setValue(d24);
+
+                    Doctor d25 = new Doctor("Naira","na1234567","orthopedic", "DrNaira@gmail.com",30,4,300,5);
+                    ref.child("doctors").child("25").setValue(d25);
+
                     PatientView();
 
                 }
