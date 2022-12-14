@@ -74,6 +74,7 @@ public class loginPage extends AppCompatActivity {
                     PharmaView();
                 }
                 else {
+
                     Doctor d1 = new Doctor("doctor-bulk-billing-doctors-chapel-hill-health-care-medical-3.png","Dr.Ahmed", "ah1234567", "general", "DrAhmed@gmail.com", 40, 4.6, 500, 13);
                     ref.child("doctors").child("1").setValue(d1);
 
@@ -148,6 +149,8 @@ public class loginPage extends AppCompatActivity {
 
                     Doctor d25 = new Doctor("woman-doctor-png-transparent-woman-doctor-images-7.png","Dr.Tasnim","ta1234567","orthopedic", "DrTasnim@gmail.com",26,4,120,5);
                     ref.child("doctors").child("25").setValue(d25);
+
+
 
                     PatientView();
 
