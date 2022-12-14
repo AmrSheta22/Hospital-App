@@ -63,6 +63,8 @@ public class loginPage extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+
+
                 String the_text = txt.getText().toString();
                 if (the_text.equals("0")) {
 

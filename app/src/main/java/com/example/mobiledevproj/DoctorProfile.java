@@ -71,5 +71,11 @@ public class DoctorProfile extends AppCompatActivity {
             i.putExtra("btnText",x);
             startActivity(i);
         });
+        ImageButton prof;
+        prof=findViewById(R.id.imageButton5);
+        prof.setOnClickListener(view -> {
+            Intent i = new Intent(this, p_p_p.class);
+            startActivity(i);
+        });
     }
 }
