@@ -49,5 +49,11 @@ public class pharmacyOptions extends AppCompatActivity {
             Intent i = new Intent(this, profile.class);
             startActivity(i);
         });
+        ImageButton prof;
+        prof=findViewById(R.id.imageButton5);
+        prof.setOnClickListener(view -> {
+            Intent i = new Intent(this, p_p_p.class);
+            startActivity(i);
+        });
     }
 }

@@ -12,5 +12,6 @@ public class Appointment {
         this.doctorID = doctorID;
     }
 }
+
     //Appointment d1 = new Appointment("1", "1");
     // ref.child("appointment").child("1").setValue(d1);

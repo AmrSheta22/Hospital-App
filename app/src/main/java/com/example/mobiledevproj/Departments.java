@@ -32,7 +32,7 @@ public class Departments extends AppCompatActivity {
                 TextView txt = findViewById(resID);
                 i.putExtra("btnText", txt.getText().toString());
                 startActivity(i);
-            };
+            }
         };
         lout1.setOnClickListener(mListener);
         lout2.setOnClickListener(mListener);
@@ -43,6 +43,12 @@ public class Departments extends AppCompatActivity {
         btn15 = findViewById(R.id.imageButton2);
         btn15.setOnClickListener(view -> {
             Intent i = new Intent(this, profile.class);
+            startActivity(i);
+        });
+        ImageButton prof;
+        prof=findViewById(R.id.imageButton5);
+        prof.setOnClickListener(view -> {
+            Intent i = new Intent(this, p_p_p.class);
             startActivity(i);
         });
     }

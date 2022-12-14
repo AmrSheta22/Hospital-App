@@ -25,5 +25,11 @@ public class pharmacy_page extends AppCompatActivity {
             Intent i = new Intent(this, loginPage.class);
             startActivity(i);
         });
+        ImageButton prof;
+        prof=findViewById(R.id.imageButton5);
+        prof.setOnClickListener(view -> {
+            Intent i = new Intent(this, p_p_p.class);
+            startActivity(i);
+        });
     }
 }

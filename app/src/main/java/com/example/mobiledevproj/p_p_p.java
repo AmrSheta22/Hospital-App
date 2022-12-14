@@ -44,6 +44,18 @@ public class p_p_p extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        ImageButton btn15;
+        btn15 = findViewById(R.id.imageButton2);
+        btn15.setOnClickListener(view -> {
+            Intent i = new Intent(this, profile.class);
+            startActivity(i);
+        });
+        ImageButton prof;
+        prof=findViewById(R.id.imageButton5);
+        prof.setOnClickListener(view -> {
+            Intent i = new Intent(this, p_p_p.class);
+            startActivity(i);
+        });
     }
 
     }
