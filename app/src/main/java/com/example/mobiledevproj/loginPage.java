@@ -151,7 +151,6 @@ public class loginPage extends AppCompatActivity {
                     ref.child("doctors").child("25").setValue(d25);
 
 
-
                     PatientView();
 
                 }
