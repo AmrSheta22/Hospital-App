@@ -31,6 +31,6 @@
     <string name="invalid_Address">We do not accept homeless people cuz they are poor and do not pay</string>
     <string name="invalid_Age">we only accept born people get born and come back</string>
     <string name="invalid_age">go to graveyard already</string>
-
+    <string name="Sign_Up"> <u>Sign Up</u></string>
 
 </resources>

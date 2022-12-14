@@ -33,7 +33,7 @@ public class loginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-        TextView btn = (TextView) findViewById(R.id.textView2);
+        TextView btn = (TextView) findViewById(R.id.textView7);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
