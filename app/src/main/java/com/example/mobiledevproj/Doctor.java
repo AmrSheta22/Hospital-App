@@ -12,11 +12,13 @@ public class Doctor {
     public double rating;
     public int numberOfPatients;
     public int yearsOfExp;
+    public String imagepath;
     public Doctor() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Doctor(String name, String password, String department, String email, int age, double rating, int numberOfPatients ,int yearsOfExp) {
+    public Doctor(String imagepath, String name, String password, String department, String email, int age, double rating, int numberOfPatients ,int yearsOfExp) {
+        this.imagepath = imagepath;
         this.name = name;
         this.password = password;
         this.department = department;
@@ -27,9 +29,6 @@ public class Doctor {
         this.age = age;
 
     }
-
-
-
 
 
 }
