@@ -152,17 +152,6 @@ public class loginPage extends AppCompatActivity {
             }
         });
     }
-    public void DoctorView(){
-        Intent intent = new Intent(this,doctor_page.class);
-        startActivity(intent);
-    }
-    public void PharmaView(){
-        Intent intent = new Intent(this,pharmacy_page.class);
-        startActivity(intent);
-    }
-    public void PatientView(){
-        Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
-    }
+
 
 }
