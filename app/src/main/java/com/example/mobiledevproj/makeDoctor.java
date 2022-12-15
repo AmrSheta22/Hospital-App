@@ -58,8 +58,6 @@ public class makeDoctor extends AppCompatActivity {
                             }
                         }
                     });
-            Intent i = new Intent(this, doctor_page.class);
-            startActivity(i);
         });
     }
 }

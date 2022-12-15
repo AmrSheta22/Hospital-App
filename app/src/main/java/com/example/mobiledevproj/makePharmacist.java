@@ -35,11 +35,10 @@ public class makePharmacist extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                ref.child("doctors").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new Pharmacist(FirebaseAuth.getInstance().getCurrentUser().getUid(), "hadh@gmail.com", "123456789"));
+                                ref.child("pharmacists").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new Pharmacist(FirebaseAuth.getInstance().getCurrentUser().getUid(), Email, Password));
                             }
                         }
                     });
-            Intent i = new Intent(this, pharmacy_page.class);
         });
     }
 }

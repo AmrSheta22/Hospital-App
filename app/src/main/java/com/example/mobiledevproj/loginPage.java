@@ -25,8 +25,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.provider.FirebaseInitProvider;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
@@ -72,16 +77,76 @@ public class loginPage extends AppCompatActivity {
             public void onClick(View v){
                 String Email = email.getText().toString();
                 String Password = password.getText().toString();
+                Log.d("hi", "we got email and pass");
                 mAuth.signInWithEmailAndPassword(Email, Password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                Log.d("hi", "wtf");
                                 if (task.isSuccessful()) {
+                                    Log.d("hi", "i can't");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    String id = user.getUid();
+                                    Query query = ref.child("users")
+                                            .orderByChild("id")
+                                            .equalTo(id);
+                                    query.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            if(snapshot.exists()) {
+                                                Log.d("hi", id);
+                                                if (id.equals("udj4LouVUSPOSwYCYBjmiftyqxf1")){
+                                                    Intent intent = new Intent(loginPage.this, doctorOrPharmacist.class);
+                                                    startActivity(intent);
+                                                }
+                                                else {
+                                                    Intent intent = new Intent(loginPage.this, profile.class);
+                                                    startActivity(intent);
+                                                }
+                                            }
+                                        }
 
-                                        Intent intent = new Intent(loginPage.this, doctorOrPharmacist.class);
-                                        startActivity(intent);
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
 
+                                        }
+                                    });
+                                    Query query2 = ref.child("doctors")
+                                            .orderByChild("id")
+                                            .equalTo(id);
+                                    query2.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            if(snapshot.exists()) {
+                                                Intent intent = new Intent(loginPage.this, doctor_page.class);
+                                                startActivity(intent);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                    Query query3 = ref.child("pharmacists")
+                                            .orderByChild("id")
+                                            .equalTo(id);
+                                    query3.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            if(snapshot.exists()) {
+                                                Intent intent = new Intent(loginPage.this, pharmacy_page.class);
+                                                startActivity(intent);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
                                 }
+
                             }
                         });
             }
