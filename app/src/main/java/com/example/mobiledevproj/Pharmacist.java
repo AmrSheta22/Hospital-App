@@ -1,6 +1,7 @@
 package com.example.mobiledevproj;
 
 public class Pharmacist {
+    public String id;
     public String email;
     public String password;
 
@@ -8,7 +9,8 @@ public class Pharmacist {
     public Pharmacist() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
-    public Pharmacist(String email, String password) {
+    public Pharmacist(String id, String email, String password) {
+        this.id = id;
         this.password = password;
         this.email = email;
     }

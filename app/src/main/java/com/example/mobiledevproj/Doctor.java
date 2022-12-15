@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.List;
 
 public class Doctor {
+    public String id;
     public String name;
     public String password;
     public String department;
@@ -17,7 +18,8 @@ public class Doctor {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Doctor(String imagepath, String name, String password, String department, String email, int age, double rating, int numberOfPatients ,int yearsOfExp) {
+    public Doctor(String id,String imagepath, String name, String password, String department, String email, int age, double rating, int numberOfPatients ,int yearsOfExp) {
+        this.id = id;
         this.imagepath = imagepath;
         this.name = name;
         this.password = password;

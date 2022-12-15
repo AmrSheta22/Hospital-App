@@ -2,6 +2,7 @@ package com.example.mobiledevproj;
 
 import static java.lang.Integer.parseInt;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,7 +16,11 @@ import android.widget.Toast;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.common.collect.Range;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -27,11 +32,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Singup2 extends AppCompatActivity {
     private Boolean selected;
     DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup2);
+        mAuth = FirebaseAuth.getInstance();
         RadioGroup Gender = (RadioGroup) findViewById(R.id.Gender);
         RadioButton male,female;
         male = (RadioButton) findViewById(R.id.Male);
@@ -77,12 +83,16 @@ public class Singup2 extends AppCompatActivity {
                     Toast.makeText(this, "you do not need hospital u need morgue", Toast.LENGTH_SHORT).show();
                 }
                 if(male.isChecked() || female.isChecked()){
-                    Patient p = new Patient(username, password, address, selected, chronic_diseases, email, age);
-                    int min = 1;
-                    int max =10000;
-                    int id = ThreadLocalRandom.current().nextInt(min, max + 1);
-                    String Id = Integer.toString(id);
-                    ref.child("users").child(Id).setValue(p);
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()){
+                                        ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new Patient(FirebaseAuth.getInstance().getCurrentUser().getUid(),username, password, address, selected, chronic_diseases, email, age));
+
+                                    }
+                                }
+                            });
                     Intent i = new Intent(this, profile.class);
 
                     startActivity(i);

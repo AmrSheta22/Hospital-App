@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Patient {
+        public String id;
         public String name;
         public String password;
         public String address;
@@ -17,7 +18,8 @@ public class Patient {
             // Default constructor required for calls to DataSnapshot.getValue(User.class)
         }
 
-        public Patient(String name, String password, String address, boolean gender, List diseases, String email, int age) {
+        public Patient(String id, String name, String password, String address, boolean gender, List diseases, String email, int age) {
+            this.id = id;
             this.name = name;
             this.password = password;
             this.address = address;
