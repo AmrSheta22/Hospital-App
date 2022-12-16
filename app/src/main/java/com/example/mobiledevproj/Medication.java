@@ -24,3 +24,8 @@ import java.util.List;
     //List nameList = new ArrayList<String>(Arrays.asList(diseases));
     //Medication d1 = new Medication("id random", "1", 1.0, nameList);
     //ref.child("medication").child("1").setValue(d1);
+
+    //String[] diseases = {"arthrites"};
+    //List nameList = new ArrayList<String>(Arrays.asList(diseases));
+    //Medication d1 = new Medication("id random", "hyvfhjv", 4.0, nameList);
+    //ref.child("medication").child("2").setValue(d1);

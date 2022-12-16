@@ -95,12 +95,15 @@ public class loginPage extends AppCompatActivity {
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             if(snapshot.exists()) {
                                                 Log.d("hi", id);
-                                                Log.d("id", snapshot.toString());
+                                                for (DataSnapshot userSnapshot: snapshot.getChildren()) {
+                                                    Log.d("id", userSnapshot.child("id").getValue().toString());
+                                                }
                                                 if (id.equals("udj4LouVUSPOSwYCYBjmiftyqxf1")){
                                                     Intent intent = new Intent(loginPage.this, doctorOrPharmacist.class);
                                                     startActivity(intent);
                                                 }
                                                 else {
+
                                                     Intent intent = new Intent(loginPage.this, profile.class);
                                                     startActivity(intent);
                                                 }
