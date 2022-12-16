@@ -39,8 +39,8 @@ public class p_p_p extends AppCompatActivity {
         Button done = findViewById(R.id.edit_done);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        //String id = user.getUid();
-        String id ="udj4LouVUSPOSwYCYBjmiftyqxf1";
+        String id = user.getUid();
+
         ref.child("users").child(id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
