@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class p_p_p extends AppCompatActivity {
@@ -39,6 +40,7 @@ public class p_p_p extends AppCompatActivity {
         EditText gender = findViewById(R.id.gender);
         EditText dis = findViewById(R.id.diseases);
         EditText email = findViewById(R.id.email);
+        EditText edtname = findViewById(R.id.imheree);
         EditText address = findViewById(R.id.Address);
         TextView hello = findViewById(R.id.name);
         ImageButton btn = findViewById(R.id.editt);
@@ -58,6 +60,7 @@ public class p_p_p extends AppCompatActivity {
                     p1 = task.getResult().getValue(Patient.class);
 
                     // Log.d("firebase", p1.getinfo());
+                    edtname.setText(p1.name);
                     address.setText(p1.address);
                     email.setText(p1.email);
                     if (p1.gender) {
@@ -82,6 +85,8 @@ public class p_p_p extends AppCompatActivity {
                 dis.setEnabled(true);
                 email.setEnabled(true);
                 address.setEnabled(true);
+                edtname.setEnabled(true);
+                gender.setEnabled(true);
                 done.setVisibility(v.VISIBLE);
 
 
@@ -90,12 +95,16 @@ public class p_p_p extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                done.setVisibility(view.INVISIBLE);
+
                 ArrayList<String> chronic_diseases = new ArrayList<>(Arrays.asList(dis.getText().toString().split(",")));
-                int edtage = Integer.parseInt(age.getText().toString());
-                String edtaddress = address.getText().toString();
-                String name = hello.getText().toString();
-                String edtemail = email.getText().toString();
-                ref.child("users").child(id).setValue(new Patient(id, p1.name, p1.password, edtaddress, p1.gender, chronic_diseases, edtemail, edtage));
+                p1.age = Integer.parseInt(age.getText().toString());
+                p1.address = address.getText().toString();
+                p1.name=edtname.getText().toString();
+                if(gender.getText().toString().equalsIgnoreCase("female")){p1.gender=false;}
+                else{p1.gender=true;}
+                p1.email = email.getText().toString();
+                ref.child("users").child(id).setValue(new Patient(id, p1.name, p1.password, p1.address,p1.gender , chronic_diseases, p1.email, p1.age));
 
             }
         });
