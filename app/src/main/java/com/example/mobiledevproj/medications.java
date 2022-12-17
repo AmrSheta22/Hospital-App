@@ -17,16 +17,24 @@ public class medications extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_11);
+        String hi_name =getIntent().getStringExtra("name");
+        TextView hello=findViewById(R.id.name);
+        hello.setText(hi_name);
+
         Button btn;
         btn = findViewById(R.id.done);
         btn.setOnClickListener(view -> {
             Intent i = new Intent(this, receiptPatient.class);
+            i.putExtra("name",hi_name);
+
             startActivity(i);
         });
         ImageButton btn15;
         btn15 = findViewById(R.id.imageButton2);
         btn15.setOnClickListener(view -> {
             Intent i = new Intent(this, pharmacyOptions.class);
+            i.putExtra("name",hi_name);
+
             startActivity(i);
         });
         ImageButton prof;

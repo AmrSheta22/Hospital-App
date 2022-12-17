@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,7 +28,9 @@ public class DoctorProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_profile);
-
+        String hi_name =getIntent().getStringExtra("name");
+        TextView hello=findViewById(R.id.name);
+        hello.setText(hi_name);
         doctorImage = findViewById(R.id.imageView2);
         FirebaseStorage storageRef = FirebaseStorage.getInstance("gs://hospital-app-be6c3.appspot.com");
 
@@ -61,6 +64,7 @@ public class DoctorProfile extends AppCompatActivity {
         btn = findViewById(R.id.button);
         btn.setOnClickListener(view -> {
             Intent i = new Intent(this, Departments.class);
+            i.putExtra("name",hi_name);
             startActivity(i);
         });
 
@@ -68,6 +72,7 @@ public class DoctorProfile extends AppCompatActivity {
         btn15 = findViewById(R.id.imageButton2);
         btn15.setOnClickListener(view -> {
             Intent i = new Intent(this, doctors.class);
+            i.putExtra("name",hi_name);
             i.putExtra("btnText",x);
             startActivity(i);
         });

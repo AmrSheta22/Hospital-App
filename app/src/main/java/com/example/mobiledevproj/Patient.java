@@ -35,24 +35,9 @@ public class Patient {
         this.age = age;
     }
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("id", id);
-        result.put("name", name);
-        result.put("password", password);
-        result.put("gender", gender);
-        result.put("diseases", diseases);
-        result.put("email", email);
 
-        return result;
-    }
 
-    public String getinfo() {
-        return id+age+address+gender+email;
-    }
 }
-
     //String[] diseases = {"diabetes", "heart disease"};
     //List nameList = new ArrayList<String>(Arrays.asList(diseases));
     //Patient p1 = new Patient("name", "1123456", "40 street miami", true, nameList, "haha@gmail.com", 11);

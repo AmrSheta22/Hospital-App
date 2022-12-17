@@ -16,6 +16,9 @@ public class Departments extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specialties);
+        String hi_name =getIntent().getStringExtra("name");
+        TextView hello=findViewById(R.id.name);
+        hello.setText(hi_name);
         LinearLayout lout1,lout2,lout3,lout4,lout5;
         lout1 = findViewById(R.id.linearlayout1);
         lout2 = findViewById(R.id.linearlayout2);
@@ -31,6 +34,7 @@ public class Departments extends AppCompatActivity {
                 int resID = getResources().getIdentifier(id, "id", getPackageName());
                 TextView txt = findViewById(resID);
                 i.putExtra("btnText", txt.getText().toString());
+                i.putExtra("name",hi_name);
                 startActivity(i);
             }
         };
