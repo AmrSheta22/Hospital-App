@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 
 public class p_p_p extends AppCompatActivity {
     DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
@@ -112,11 +113,7 @@ public class p_p_p extends AppCompatActivity {
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i;
-                i = new Intent(p_p_p.this, MainActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                mAuth.signOut();
-                startActivity(i);
+                outtt();
             }
         });
         ImageButton btn15;
@@ -134,5 +131,12 @@ public class p_p_p extends AppCompatActivity {
 
     }
 
+    public void outtt() {
+        Intent i;
+        i = new Intent(p_p_p.this, MainActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        mAuth.signOut();
+        startActivity(i);
+    }
 }
 
