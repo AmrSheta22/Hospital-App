@@ -1,51 +1,68 @@
 package com.example.mobiledevproj;
-import android.widget.TextView;
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.text.TextUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class medications extends AppCompatActivity {
-    TextView textview;
-    DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
-    private FirebaseAuth mAuth;
+    EditText editTextName;
+    Button btn;
+    //DatabaseReference ref;
+    DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference("writtenmed");
+    ListView listViewWritten;
+
+    List<writtenmeds> writtenList;
+
+    //@SuppressLint("MissingInflatedId")
+    //@SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_11);
-        Button btn;
-        btn = findViewById(R.id.done);
-        textview=findViewById(R.id.item1);
-        mAuth = FirebaseAuth.getInstance();
+        String hi_name =getIntent().getStringExtra("name");
+        TextView hello=findViewById(R.id.name);
+        hello.setText(hi_name);
 
+
+        editTextName = findViewById(R.id.item1);
+
+        listViewWritten =findViewById(R.id.listViewWritten);
+
+        writtenList =new ArrayList<>();
+
+        btn = findViewById(R.id.done);
         btn.setOnClickListener(view -> {
             Intent i = new Intent(this, receiptPatient.class);
+            i.putExtra("name",hi_name);
+            addMed();
             startActivity(i);
+
         });
+
         ImageButton btn15;
         btn15 = findViewById(R.id.imageButton2);
         btn15.setOnClickListener(view -> {
             Intent i = new Intent(this, pharmacyOptions.class);
+            i.putExtra("name",hi_name);
+
             startActivity(i);
         });
         ImageButton prof;
@@ -54,26 +71,52 @@ public class medications extends AppCompatActivity {
             Intent i = new Intent(this, p_p_p.class);
             startActivity(i);
         });
+    }
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference juneRef = rootRef.child("medication").child("id").child("1");
-        ValueEventListener valueEventListener = new ValueEventListener() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    String msg = ds.child("name").getValue(String.class);
-                    textview.setText(msg);
+                writtenList.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    writtenmeds writtenmed = postSnapshot.getValue(writtenmeds.class);
+                    writtenList.add(writtenmed);
                 }
+                writtenmedslist adapter = new writtenmedslist(medications.this, writtenList);
+                listViewWritten.setAdapter(adapter);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError) {
+
             }
-        };
-        juneRef.addListenerForSingleValueEvent(valueEventListener);
+        });
+    }
 
-    }}
+    private void addMed(){
+    String name =editTextName.getText().toString().trim();
+    if(!TextUtils.isEmpty(name)) {
+        String id = ref.push().getKey();
+        ref.push().getKey();
+        writtenmeds writtenmed = new writtenmeds(id,name);
+        ref.child(id).setValue(writtenmed);
 
+        Toast.makeText(this,"added",Toast.LENGTH_LONG).show();
+    }else{
+        Toast.makeText(this,"you should enter a medicine",Toast.LENGTH_LONG).show();
+    }
+
+    }
+
+
+
+
+
+
+}
 //HashMap mbtn = new HashMap();
 //HashMap txt = new HashMap();
 //final View.OnClickListener mListener = new View.OnClickListener() {
@@ -93,4 +136,4 @@ public class medications extends AppCompatActivity {
 //    String id = "textView"+Integer.toString(j);
 //    int resID = getResources().getIdentifier(id, "id", getPackageName());
 //    txt.put((j-8),findViewById(resID));
-//}*/
+//}

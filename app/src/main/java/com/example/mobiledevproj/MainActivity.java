@@ -6,9 +6,18 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
-
+    DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
@@ -42,4 +51,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }

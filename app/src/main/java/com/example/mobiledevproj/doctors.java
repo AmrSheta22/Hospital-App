@@ -17,11 +17,15 @@ public class doctors extends AppCompatActivity {
         TextView txt = findViewById(R.id.textView4);
         String x = mIntent.getStringExtra("btnText");
         txt.setText(x);
-
+        String hi_name =getIntent().getStringExtra("name");
+        TextView hello=findViewById(R.id.name);
+        hello.setText(hi_name);
         ImageButton btn;
         btn = findViewById(R.id.imb1);
         btn.setOnClickListener(view -> {
             Intent i = new Intent(this, DoctorProfile.class);
+            i.putExtra("name",hi_name);
+
             i.putExtra("key",x);
             startActivity(i);
         });
@@ -29,6 +33,7 @@ public class doctors extends AppCompatActivity {
         btn15 = findViewById(R.id.imageButton2);
         btn15.setOnClickListener(view -> {
             Intent i = new Intent(this, Departments.class);
+            i.putExtra("name",hi_name);
             startActivity(i);
         });
         ImageButton prof;
