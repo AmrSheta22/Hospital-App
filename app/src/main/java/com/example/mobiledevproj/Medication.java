@@ -19,10 +19,12 @@ import java.util.List;
         this.price = price;
         this.diseases = diseases;
     }
+
+
 }
-    //String[] diseases = {"diabetes", "heart disease"};
-    //List nameList = new ArrayList<String>(Arrays.asList(diseases));
-    //Medication d1 = new Medication("id random", "1", 1.0, nameList);
+   // String[] diseases = {"diabetes", "heart disease"};
+   // List nameList = new ArrayList<String>(Arrays.asList(diseases));
+   // Medication d1 = new Medication("id random", "1", 1.0, nameList);
     //ref.child("medication").child("1").setValue(d1);
 
     //String[] diseases = {"arthrites"};

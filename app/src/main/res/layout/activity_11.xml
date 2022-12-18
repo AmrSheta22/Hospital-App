@@ -122,7 +122,9 @@
                         android:text="Item1"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"
+                        />
 
                     <Button
                         android:id="@+id/button2"
@@ -138,7 +140,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="0" />
+                        android:text="0"
+                        />
 
                     <Button
                         android:id="@+id/button3"
@@ -163,7 +166,8 @@
                         android:text="Item2"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button4"
@@ -203,7 +207,8 @@
                         android:text="Item3"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button6"
@@ -243,7 +248,8 @@
                         android:text="Item4"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button8"
@@ -283,7 +289,8 @@
                         android:text="Item5"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button10"
@@ -323,7 +330,8 @@
                         android:text="Item6"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button12"
@@ -363,7 +371,8 @@
                         android:text="Item7"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button14"
@@ -403,7 +412,8 @@
                         android:text="Item8"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button16"
@@ -443,7 +453,8 @@
                         android:text="Item9"
                         android:textColor="#019874"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textIsSelectable="true"/>
 
                     <Button
                         android:id="@+id/button18"
