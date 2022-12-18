@@ -88,6 +88,7 @@ public class Singup2 extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
+                                        // hi hi
                                         ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new Patient(FirebaseAuth.getInstance().getCurrentUser().getUid(),username, password, address, selected, chronic_diseases, email, age));
 
                                     }
