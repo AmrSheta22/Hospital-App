@@ -21,67 +21,71 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse2" />
+
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    <LinearLayout
-        android:id="@+id/header"
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="5">
+        android:layout_height="match_parent">
 
-        <View
-
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="2">
-            <TextView
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <View
+
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/black" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello !"
-                android:textStyle="normal"
-                android:paddingTop="10dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                />
-            <TextView
-                android:id="@+id/name"
-                android:layout_marginLeft="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="mariam mohamed"
-                android:textStyle="italic"
-                android:paddingTop="1dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                />
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="Hello !"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="1dp"
+                    android:text="mariam mohamed"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
-
-    </LinearLayout>
-    <View
-        android:id="@+id/Horizontal_line"
-        android:layout_below="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="#5C5C5C" />
+        <View
+            android:id="@+id/Horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/header"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#5C5C5C" />
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -114,12 +118,12 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/item1"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|top"
-                        android:text="Item1"
+                        android:text=""
                         android:textColor="#019874"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -155,7 +159,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/item2"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
@@ -195,11 +199,12 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/item3"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|top"
+                        android:minHeight="48dp"
                         android:text="Item3"
                         android:textColor="#019874"
                         android:textSize="16sp"
@@ -235,7 +240,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/item4"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
@@ -275,7 +280,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/item5"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
@@ -469,6 +474,7 @@
                         android:backgroundTint="#019874"
                         android:text="+" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="30dp"
@@ -538,7 +544,17 @@
                 android:padding="10dp"
                 app:srcCompat="@drawable/ic_baseline_account_circle_24" />
         </LinearLayout>
+
     </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listViewWritten"
+        android:layout_width="273dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

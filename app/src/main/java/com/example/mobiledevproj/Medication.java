@@ -1,7 +1,5 @@
 package com.example.mobiledevproj;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
     public class Medication {
@@ -19,6 +17,9 @@ import java.util.List;
         this.price = price;
         this.diseases = diseases;
     }
+
+
+
 }
     //String[] diseases = {"diabetes", "heart disease"};
     //List nameList = new ArrayList<String>(Arrays.asList(diseases));
