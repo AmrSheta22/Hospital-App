@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +40,12 @@ public class makePharmacist extends AppCompatActivity {
                             }
                         }
                     });
+        });
+        ImageButton btn15;
+        btn15 = findViewById(R.id.imageButton2);
+        btn15.setOnClickListener(view -> {
+            Intent i = new Intent(this, doctorOrPharmacist.class);
+            startActivity(i);
         });
     }
 }

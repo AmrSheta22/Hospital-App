@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "350359252535",
+    "firebase_url": "https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "hospital-app-be6c3",
     "storage_bucket": "hospital-app-be6c3.appspot.com"
   },

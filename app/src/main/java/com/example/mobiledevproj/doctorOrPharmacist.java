@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class doctorOrPharmacist extends AppCompatActivity {
     Button doctor, pharmacist;
@@ -20,6 +21,12 @@ public class doctorOrPharmacist extends AppCompatActivity {
         });
         pharmacist.setOnClickListener(view -> {
             Intent i = new Intent(this, makePharmacist.class);
+            startActivity(i);
+        });
+        ImageButton btn15;
+        btn15 = findViewById(R.id.imageButton2);
+        btn15.setOnClickListener(view -> {
+            Intent i = new Intent(this, loginPage.class);
             startActivity(i);
         });
     }

@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class pharmacyOptions extends AppCompatActivity {
-    Button a;
-    Button invoice;
-    Button question;
+    ImageView a;
+    ImageView invoice;
+    ImageView question;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class pharmacyOptions extends AppCompatActivity {
         String hi_name =getIntent().getStringExtra("name");
         TextView hello=findViewById(R.id.name);
         hello.setText(hi_name);
-        a = (Button) findViewById(R.id.button1);
+        a = (ImageView) findViewById(R.id.medication);
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +32,7 @@ public class pharmacyOptions extends AppCompatActivity {
             }
         });
 
-        invoice = (Button) findViewById(R.id.invoice);
+        invoice = (ImageView) findViewById(R.id.prescription);
         invoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +42,7 @@ public class pharmacyOptions extends AppCompatActivity {
             }
         });
 
-        question = (Button) findViewById(R.id.questions);
+        question = (ImageView) findViewById(R.id.questions);
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

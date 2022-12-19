@@ -22,15 +22,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ellipse2" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="36dp">
+
         <LinearLayout
             android:id="@+id/header"
-            android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:orientation="horizontal"
             android:weightSum="5">
 
@@ -38,59 +41,61 @@
 
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@color/black" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="2">
+                android:layout_weight="2"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hello !"
-                    android:textStyle="normal"
+                    android:layout_marginLeft="20dp"
                     android:paddingTop="10dp"
+                    android:text="Hello !"
                     android:textColor="@color/black"
                     android:textSize="15sp"
-                    />
+                    android:textStyle="normal" />
+
                 <TextView
                     android:id="@+id/name"
-                    android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mariam mohamed"
-                    android:textStyle="italic"
+                    android:layout_marginLeft="20dp"
                     android:paddingTop="1dp"
+                    android:text="mariam mohamed"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    />
+                    android:textStyle="italic" />
             </LinearLayout>
 
         </LinearLayout>
+
         <View
             android:id="@+id/Horizontal_line"
-            android:layout_below="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="20dp"
+            android:layout_below="@+id/header"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:background="#5C5C5C" />
 
         <EditText
             android:id="@+id/photo"
-            android:layout_width="260dp"
-            android:layout_height="280dp"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="69dp"
-            android:layout_marginBottom="248dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="533dp"
             android:ems="10"
             android:hint="Uploud your prescription medications"
             android:inputType=""
@@ -161,18 +166,32 @@
                 app:srcCompat="@drawable/ic_baseline_account_circle_24" />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="73dp"
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="89dp"
+            android:layout_height="75dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="310dp"
+            android:layout_marginEnd="275dp"
             android:layout_marginBottom="103dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
+            app:srcCompat="@drawable/ic_baseline_photo_camera_24"
+            android:onClick="UploadImage"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="378dp"
+            android:layout_height="303dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="33dp"
+            android:layout_marginBottom="206dp"
+            app:srcCompat="@drawable/shadow" />
     </RelativeLayout>
 
 
