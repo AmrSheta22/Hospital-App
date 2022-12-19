@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Singup2">
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -23,44 +24,40 @@
 
     <View
         android:id="@+id/background"
-        android:layout_width="410dp"
-        android:layout_height="613dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/ic_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.643" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="146dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="24dp"
         android:gravity="center_horizontal|top"
-        android:text="silent hill"
+        android:text="Silent Hill"
         android:textColor="#019874"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/background"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/background"
         app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
         app:srcCompat="@drawable/ic_logo" />
 
     <TextView
@@ -97,52 +94,45 @@
         android:id="@+id/Chronic_Diseases"
         android:layout_width="411dp"
         android:layout_height="64dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Chronic Diseases (use , to separate)"
-
         android:inputType="textLongMessage|textPersonName"
-
         android:minHeight="48dp"
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Gender" />
 
     <EditText
         android:id="@+id/Address"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Address"
         android:inputType="textLongMessage|textPersonName"
-
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/Chronic_Diseases" />
 
     <EditText
         android:id="@+id/Age"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Age"
         android:inputType="number"
-
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/Address"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Address"
         app:layout_constraintTop_toBottomOf="@+id/Address" />
 
@@ -156,15 +146,14 @@
         app:backgroundTint="#019874"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Age"
         app:layout_constraintVertical_bias="0.404" />
 
     <RadioGroup
         android:id="@+id/Gender"
-        android:layout_width="392dp"
-        android:layout_height="61dp"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:orientation="horizontal"
@@ -185,5 +174,12 @@
             android:layout_height="match_parent"
             android:text="Male" />
     </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -89,59 +89,6 @@
             android:layout_marginBottom="10dp"
             android:background="#5C5C5C" />
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="163dp"
-            android:layout_height="67dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="-163dp"
-            android:layout_marginBottom="420dp"
-            android:layout_toStartOf="@+id/invoice"
-            android:text="Medications"
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#019874"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.143"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/invoice"
-            android:layout_width="163dp"
-            android:layout_height="67dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="296dp"
-            android:text="Invoice "
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#019874"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/questions"
-            android:layout_width="163dp"
-            android:layout_height="67dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="162dp"
-            android:text="Questions "
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#019874"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
 
         <LinearLayout
             android:id="@+id/footer"
@@ -184,41 +131,107 @@
                 app:srcCompat="@drawable/ic_baseline_account_circle_24" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="199dp"
-            android:layout_height="50dp"
-            android:layout_above="@+id/footer"
-            android:layout_alignEnd="@+id/Horizontal_line"
-            android:layout_marginEnd="162dp"
-            android:layout_marginBottom="349dp"
-            android:text="To buy Medications"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/medication"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/Horizontal_line"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="100dp"
+            app:srcCompat="@drawable/ic_baseline_medication_24" />
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="283dp"
+            android:id="@+id/textMedication"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/footer"
-            android:layout_alignEnd="@+id/Horizontal_line"
-            android:layout_marginEnd="84dp"
-            android:layout_marginBottom="242dp"
-            android:text="Photo the prescriptions"
-            android:textSize="20sp"
+            android:layout_below="@+id/medication"
+            android:layout_alignLeft="@+id/medication"
+            android:layout_alignRight="@+id/medication"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="-1dp"
+            android:layout_marginBottom="-25dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="Buy Medications"
+            android:textColor="#000000"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
+
+
+        <ImageView
+            android:id="@+id/prescription"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/medication"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="100dp"
+            app:srcCompat="@drawable/ic_baseline_camera_24" />
+
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="199dp"
-            android:layout_height="50dp"
-            android:layout_above="@+id/footer"
-            android:layout_alignEnd="@+id/Horizontal_line"
-            android:layout_marginEnd="168dp"
-            android:layout_marginBottom="94dp"
-            android:text="Find your symptoms"
-            android:textSize="20sp"
+            android:id="@+id/textPrescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prescription"
+            android:layout_alignLeft="@+id/prescription"
+            android:layout_alignRight="@+id/prescription"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="-1dp"
+            android:layout_marginBottom="-25dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="Capture Prescription"
+            android:textColor="#000000"
+            android:textSize="18sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/questions"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/prescription"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="100dp"
+            app:srcCompat="@drawable/ic_baseline_psychology_alt_24" />
+
+        <TextView
+            android:id="@+id/textQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/questions"
+            android:layout_alignLeft="@+id/questions"
+            android:layout_alignRight="@+id/questions"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="-1dp"
+            android:layout_marginBottom="-25dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="Find Your Symptoms"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
 

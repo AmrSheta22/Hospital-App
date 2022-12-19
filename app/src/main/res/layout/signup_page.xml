@@ -31,10 +31,9 @@
         android:background="@drawable/ic_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintVertical_bias="0.643" />
 
     <TextView
         android:id="@+id/textView"
@@ -42,7 +41,7 @@
         android:layout_height="45dp"
         android:layout_marginEnd="24dp"
         android:gravity="center_horizontal|top"
-        android:text="silent hill"
+        android:text="Silent Hill"
         android:textColor="#019874"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -99,9 +98,7 @@
         android:ems="10"
         android:hint="User name"
         android:inputType="textPersonName"
-
         android:minHeight="48dp"
-
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/user_email_p"
@@ -115,11 +112,9 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-
-        android:hint="email"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,14 +123,13 @@
 
     <EditText
         android:id="@+id/password_p"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/background"
@@ -144,12 +138,12 @@
 
     <EditText
         android:id="@+id/confirm_password_p"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="confirm Password"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
         android:paddingLeft="50dp"
         android:textColor="#FFFFFF"
@@ -159,8 +153,8 @@
 
     <Button
         android:id="@+id/log_in_p"
-        android:layout_width="407dp"
-        android:layout_height="66dp"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/input_bg"
         android:text="Next"
