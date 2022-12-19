@@ -55,6 +55,8 @@ public class makeDoctor extends AppCompatActivity {
                             if (task.isSuccessful()) {
 
                                 ref.child("doctors").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new Doctor(FirebaseAuth.getInstance().getCurrentUser().getUid(), "doctor-bulk-billing-doctors-chapel-hill-health-care-medical-3.png", Name, Password, Department, Email, ageint, ratingint, numofpatients, yearsofexpint));
+                                Intent i = new Intent(makeDoctor.this, doctorOrPharmacist.class);
+                                startActivity(i);
                             }
                         }
                     });
