@@ -43,7 +43,7 @@ public class makeDoctor extends AppCompatActivity {
             String Age = age.getText().toString();
             int ageint = Integer.parseInt(Age);
             String Rating = rating.getText().toString();
-            int ratingint = Integer.parseInt(Rating);
+            double ratingint = Double.parseDouble(Rating);
             String YearsOfExp = yearsOfExp.getText().toString();
             int yearsofexpint = Integer.parseInt(YearsOfExp);
             String NumberOfPatients = numberOfPatients.getText().toString();
