@@ -9,6 +9,7 @@ public class Bill {
     public String pharmacistID;
     public List medications; //id
     // id is incremental so we don't need number of appointment
+    // hi hi
     public Bill() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
