@@ -4,9 +4,13 @@ package com.example.mobiledevproj;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -76,32 +81,50 @@ public class medications extends AppCompatActivity {
                     Log.d("hi","mona");
                     LinearLayout myLayout = findViewById(R.id.linear);
                     for (DataSnapshot i:snapshot.getChildren()){
-                            LinearLayout parent = new LinearLayout(medications.this);
-                            parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-                            parent.setOrientation(LinearLayout.HORIZONTAL);
-                            //setContentView(parent);
-                            TextView textView = new TextView(medications.this);
-                            textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                                    LinearLayout.LayoutParams.WRAP_CONTENT));
-                            textView.setText(i.child("name").getValue().toString());
-                            Button button = new Button(medications.this);
-                            button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout parent = new LinearLayout(medications.this);
+                        parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+                        parent.setOrientation(LinearLayout.HORIZONTAL);
+                        //setContentView(parent);
+                        TextView textView = new TextView(medications.this);
+                        textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                                 LinearLayout.LayoutParams.WRAP_CONTENT));
-                            button.setId(Integer.parseInt(i.child("id").getValue().toString()));
-                            TextView textView2 = new TextView(medications.this);
-                            textView2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT));
-                            textView2.setText("0");
-                            textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
-                            Button button2 = new Button(medications.this);
-                            button2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT));
-                            button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
-                            parent.addView(textView);
-                            parent.addView(button);
-                            parent.addView(textView2);
-                            parent.addView(button2);
-                            myLayout.addView(parent);}
+                        textView.setText(i.child("name").getValue().toString());
+                        textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
+                        textView.setTextColor(Color.parseColor("#019874"));
+                        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
+                        textView.setTypeface(null, Typeface.BOLD);
+
+                        Button button = new Button(medications.this);
+                        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) button.getLayoutParams();
+                        params.height = Integer.parseInt("wrap_content");
+                        params.width = Integer.parseInt("2dp");
+                        params.weight = Float.parseFloat("1");
+                        button.setBackgroundTintList(ContextCompat.getColorStateList(medications.this,Color.parseColor("#019874")));
+                        button.setId(Integer.parseInt(i.child("id").getValue().toString()));
+                        button.setText("-");
+                        TextView textView2 = new TextView(medications.this);
+                        LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams) textView2.getLayoutParams();
+                        params2.height = Integer.parseInt("wrap_content");
+                        params2.width = Integer.parseInt("2dp");
+                        params2.weight = Float.parseFloat("1");
+                        textView2.setText("0");
+                        textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
+                        textView2.setGravity(Gravity.CENTER);
+
+                        Button button2 = new Button(medications.this);
+
+                        LinearLayout.LayoutParams params3 = (LinearLayout.LayoutParams) button2.getLayoutParams();
+                        params3.height = Integer.parseInt("wrap_content");
+                        params3.width = Integer.parseInt("2dp");
+                        params3.weight = Float.parseFloat("1");
+                        button2.setBackgroundTintList(ContextCompat.getColorStateList(medications.this,Color.parseColor("#019874")));
+                        button2.setText("+");
+                        button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
+                        parent.addView(textView);
+                        parent.addView(button);
+                        parent.addView(textView2);
+                        parent.addView(button2);
+                        myLayout.addView(parent);}
 
                 }
 
