@@ -4,6 +4,7 @@ package com.example.mobiledevproj;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//
 public class medications extends AppCompatActivity {
     Button btn;
     //DatabaseReference ref;
@@ -86,8 +87,7 @@ public class medications extends AppCompatActivity {
                         parent.setOrientation(LinearLayout.HORIZONTAL);
                         //setContentView(parent);
                         TextView textView = new TextView(medications.this);
-                        textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT));
+                        textView.setLayoutParams(new LinearLayout.LayoutParams(300, LinearLayout.LayoutParams.WRAP_CONTENT));
                         textView.setText(i.child("name").getValue().toString());
                         textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
                         textView.setTextColor(Color.parseColor("#019874"));
@@ -95,29 +95,31 @@ public class medications extends AppCompatActivity {
                         textView.setTypeface(null, Typeface.BOLD);
 
                         Button button = new Button(medications.this);
-                        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) button.getLayoutParams();
-                        params.height = Integer.parseInt("wrap_content");
-                        params.width = Integer.parseInt("2dp");
-                        params.weight = Float.parseFloat("1");
-                        button.setBackgroundTintList(ContextCompat.getColorStateList(medications.this,Color.parseColor("#019874")));
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.WRAP_CONTENT, 100);
+                        button.setLayoutParams(params);
+                        button.setBackgroundTintList(ColorStateList.valueOf(button.getContext().getResources().getColor(R.color.my_color)));
                         button.setId(Integer.parseInt(i.child("id").getValue().toString()));
                         button.setText("-");
                         TextView textView2 = new TextView(medications.this);
-                        LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams) textView2.getLayoutParams();
-                        params2.height = Integer.parseInt("wrap_content");
-                        params2.width = Integer.parseInt("2dp");
-                        params2.weight = Float.parseFloat("1");
+                        textView2.setLayoutParams(new LinearLayout.LayoutParams(100,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+                        textView2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
+                        textView2.setTextColor(Color.parseColor("#019874"));
+                        textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
+                        textView2.setTypeface(null, Typeface.BOLD);
                         textView2.setText("0");
                         textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
                         textView2.setGravity(Gravity.CENTER);
 
                         Button button2 = new Button(medications.this);
 
-                        LinearLayout.LayoutParams params3 = (LinearLayout.LayoutParams) button2.getLayoutParams();
-                        params3.height = Integer.parseInt("wrap_content");
-                        params3.width = Integer.parseInt("2dp");
-                        params3.weight = Float.parseFloat("1");
-                        button2.setBackgroundTintList(ContextCompat.getColorStateList(medications.this,Color.parseColor("#019874")));
+                        LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT);
+                        params2.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                        params2.width = 2;
+                        params2.weight = 1;
+                        button2.setLayoutParams(params);
+                        button2.setBackgroundTintList(ColorStateList.valueOf(button2.getContext().getResources().getColor(R.color.my_color)));
                         button2.setText("+");
                         button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
                         parent.addView(textView);

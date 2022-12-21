@@ -92,8 +92,7 @@ public class DoctorProfile extends AppCompatActivity {
         btn = findViewById(R.id.button);
         btn.setOnClickListener(view -> {
             //////////
-            appointment.setpatientID(FirebaseAuth.getInstance().getCurrentUser().getUid());
-            appointment.setdoctorID(String.valueOf(doc));
+
                 ref.child(String.valueOf(number+1)).setValue(appointment);
             //////////
                 Intent i = new Intent(this, Departments.class);
