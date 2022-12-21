@@ -32,7 +32,6 @@ public class Doctor {
 
     }
 
-
 }
     //Doctor d1 = new Doctor("name", "1123456", "general", "haha@gmail.com", 11, 4.6, 500, 4);
     //ref.child("doctors").child("1").setValue(d1);

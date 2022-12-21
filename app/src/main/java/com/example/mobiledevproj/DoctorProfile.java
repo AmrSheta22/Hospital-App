@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -15,6 +17,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -23,7 +31,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class DoctorProfile extends AppCompatActivity {
+    DatabaseReference ref;
+    Button btn;
     ImageView doctorImage;
+    Appointment appointment;
+    long number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,11 +72,33 @@ public class DoctorProfile extends AppCompatActivity {
 
         Intent mIntent = getIntent();
         String x = mIntent.getStringExtra("key");
-        Button btn;
+        //////////
+        ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("appointment");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    number= snapshot.getChildrenCount();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        //////////
+        Log.d("high",String.valueOf(number));
         btn = findViewById(R.id.button);
         btn.setOnClickListener(view -> {
-            Intent i = new Intent(this, Departments.class);
-            i.putExtra("name",hi_name);
+            //////////
+            String wd=FirebaseAuth.getInstance().getCurrentUser().getUid();
+            Appointment appo = new Appointment(2, wd, "8oXXtLd3PCYICocHrIonh3Nos612");
+            ref.child(String.valueOf(number+1)).setValue(appo);
+            Toast.makeText(getApplicationContext(), "Successfully Booked", Toast.LENGTH_SHORT).show();
+            //////////
+            Intent i = new Intent(DoctorProfile.this, Departments.class);
+            i.putExtra("name", hi_name);
             startActivity(i);
         });
 

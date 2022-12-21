@@ -112,6 +112,7 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
                 <ImageButton
+                    android:id="@+id/p"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="60dp"
@@ -131,6 +132,7 @@
                     android:textSize="40sp" />
 
                 <ImageButton
+                    android:id="@+id/nextnum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="60dp"
@@ -162,6 +164,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/pname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
