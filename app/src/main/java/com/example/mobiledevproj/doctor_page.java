@@ -52,6 +52,7 @@ public class doctor_page extends AppCompatActivity {
                     reff.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            if(snapshot.exists())
                             nam = dataSnapshot.getValue(String.class);
                         }
 
@@ -81,7 +82,7 @@ public class doctor_page extends AppCompatActivity {
         ImageButton next;
         next=findViewById(R.id.nextnum);
         next.setOnClickListener(view -> {
-            if(number>0){
+            if(number>1){
                 ref.child(ord).setValue(null);
             }
             TextView txt1 = findViewById(R.id.info);
