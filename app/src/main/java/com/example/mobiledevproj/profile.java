@@ -55,9 +55,10 @@ public class profile extends AppCompatActivity {
         curr.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
                 DataSnapshot fc = snapshot.getChildren().iterator().next();
                 ord = String.valueOf(fc.getRef().getKey());
-            }
+            }}
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
