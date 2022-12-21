@@ -93,7 +93,7 @@ public class DoctorProfile extends AppCompatActivity {
         btn.setOnClickListener(view -> {
             //////////
             String wd=FirebaseAuth.getInstance().getCurrentUser().getUid();
-            Appointment appo = new Appointment((int) (number+1), wd, "8oXXtLd3PCYICocHrIonh3Nos612");
+            Appointment appo = new Appointment(2, wd, "8oXXtLd3PCYICocHrIonh3Nos612");
             ref.child(String.valueOf(number+1)).setValue(appo);
             Toast.makeText(getApplicationContext(), "Successfully Booked", Toast.LENGTH_SHORT).show();
             //////////

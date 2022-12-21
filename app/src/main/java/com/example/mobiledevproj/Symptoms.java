@@ -31,7 +31,7 @@ public class Symptoms extends AppCompatActivity {
         });
         final View.OnClickListener mListener = new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(Symptoms.this,doctors.class);
+                Intent i = new Intent(Symptoms.this,medications2.class);
                 Button l = (Button) v;
                 i.putExtra("symptom", l.getText().toString());
                 i.putExtra("name",hi_name);
