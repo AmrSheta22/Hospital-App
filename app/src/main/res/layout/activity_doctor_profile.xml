@@ -87,7 +87,7 @@
         app:layout_constraintVertical_bias="0.24" />
 
     <TextView
-        android:id="@+id/some_id"
+        android:id="@+id/rate"
         android:layout_width="30dp"
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
@@ -104,12 +104,12 @@
 
     <TextView
         android:id="@+id/rating"
-        android:layout_width="49dp"
+        android:layout_width="80dp"
         android:layout_height="23dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal|top"
-        android:text="@string/rating"
+        android:text="Experience"
         android:textAppearance="@style/rating"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,7 +119,7 @@
         app:layout_constraintVertical_bias="0.576" />
 
     <TextView
-        android:id="@+id/yr"
+        android:id="@+id/year"
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
@@ -157,7 +157,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal|top"
-        android:text="@string/experience"
+        android:text="Rating"
         android:textAppearance="@style/experience"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,15 +172,15 @@
         android:layout_height="415dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintHorizontal_bias="0.792"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268"
+        app:layout_constraintVertical_bias="0.278"
         app:srcCompat="@drawable/nurse" />
 
     <TextView
-        android:id="@+id/k"
-        android:layout_width="37dp"
+        android:id="@+id/Num_patient"
+        android:layout_width="wrap_content"
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -195,7 +195,7 @@
         app:layout_constraintVertical_bias="0.612" />
 
     <TextView
-        android:id="@+id/dr_mosia_gl"
+        android:id="@+id/drName"
         android:layout_width="249dp"
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
@@ -205,13 +205,17 @@
         android:textAppearance="@style/dr_mosia_gl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.194" />
 
+    <!-- Rating -->
+
+    <!-- 5 yr -->
+
     <TextView
-        android:id="@+id/sr_psycholo"
+        android:id="@+id/dep_name"
         android:layout_width="139dp"
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
@@ -221,14 +225,10 @@
         android:textAppearance="@style/sr_psycholo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.257" />
-
-    <!-- Rating -->
-
-    <!-- 5 yr -->
 
     <TextView
         android:id="@+id/about"
