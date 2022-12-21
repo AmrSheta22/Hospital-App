@@ -88,15 +88,13 @@ public class Singup2 extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
-                                        // hi hi
                                         ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new Patient(FirebaseAuth.getInstance().getCurrentUser().getUid(),username, password, address, selected, chronic_diseases, email, age));
-
+                                        Intent i = new Intent(Singup2.this, profile.class);
+                                        startActivity(i);
                                     }
                                 }
                             });
-                    Intent i = new Intent(this, profile.class);
 
-                    startActivity(i);
                 }else {
                     Toast.makeText(this, "either u have it or u do not Choose gender dear", Toast.LENGTH_SHORT).show();
 

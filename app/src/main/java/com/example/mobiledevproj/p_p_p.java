@@ -84,7 +84,7 @@ public class p_p_p extends AppCompatActivity {
             public void onClick(View v) {
                 age.setEnabled(true);
                 dis.setEnabled(true);
-                email.setEnabled(true);
+                email.setEnabled(false);
                 address.setEnabled(true);
                 edtname.setEnabled(true);
                 gender.setEnabled(true);
@@ -109,7 +109,6 @@ public class p_p_p extends AppCompatActivity {
 
             }
         });
-
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
