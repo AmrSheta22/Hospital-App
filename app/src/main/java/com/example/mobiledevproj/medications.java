@@ -91,15 +91,15 @@ public class medications extends AppCompatActivity {
                             TextView textView2 = new TextView(medications.this);
                             textView2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                                 LinearLayout.LayoutParams.WRAP_CONTENT));
-                            textView.setText("0");
+                            textView2.setText("0");
                             textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
                             Button button2 = new Button(medications.this);
                             button2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                                 LinearLayout.LayoutParams.WRAP_CONTENT));
                             button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
                             parent.addView(textView);
-                            parent.addView(textView2);
                             parent.addView(button);
+                            parent.addView(textView2);
                             parent.addView(button2);
                             myLayout.addView(parent);}
 
