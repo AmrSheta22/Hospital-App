@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -31,12 +32,10 @@ import java.io.IOException;
 
 public class DoctorProfile extends AppCompatActivity {
     DatabaseReference ref;
-    DatabaseReference doc;
     Button btn;
     ImageView doctorImage;
     Appointment appointment;
-    Doctor doctor;
-    long number=0;
+    long number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,13 +73,13 @@ public class DoctorProfile extends AppCompatActivity {
         Intent mIntent = getIntent();
         String x = mIntent.getStringExtra("key");
         //////////
-        ref = FirebaseDatabase.getInstance().getReference().child("Appointment");
-        doc = FirebaseDatabase.getInstance().getReference().child("doctors").child("8oXXtLd3PCYICocHrIonh3Nos612").child("id");
+        ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("appointment");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists())
-                    number=(snapshot.getChildrenCount());
+                    number= snapshot.getChildrenCount();
+
             }
 
             @Override
@@ -89,16 +88,19 @@ public class DoctorProfile extends AppCompatActivity {
             }
         });
         //////////
+        Log.d("high",String.valueOf(number));
         btn = findViewById(R.id.button);
         btn.setOnClickListener(view -> {
             //////////
-
-                ref.child(String.valueOf(number+1)).setValue(appointment);
+            String wd=FirebaseAuth.getInstance().getCurrentUser().getUid();
+            Appointment appo = new Appointment(2, wd, "8oXXtLd3PCYICocHrIonh3Nos612");
+            ref.child(String.valueOf(number+1)).setValue(appo);
+            Toast.makeText(getApplicationContext(), "Successfully Booked", Toast.LENGTH_SHORT).show();
             //////////
-                Intent i = new Intent(this, Departments.class);
-                i.putExtra("name", hi_name);
-                    startActivity(i);
-                });
+            Intent i = new Intent(DoctorProfile.this, Departments.class);
+            i.putExtra("name", hi_name);
+            startActivity(i);
+        });
 
         ImageButton btn15;
         btn15 = findViewById(R.id.imageButton2);
