@@ -146,7 +146,7 @@
                 >
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/button1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#009688"
@@ -159,7 +159,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button"
+                    android:id="@+id/button2"
                     android:text="stomach cramps"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -171,7 +171,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button9"
+                    android:id="@+id/button3"
                     android:text="fever"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -183,7 +183,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button10"
+                    android:id="@+id/button4"
                     android:text="arthritis"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -194,7 +194,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button11"
+                    android:id="@+id/button5"
                     android:text="allergies"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -205,7 +205,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button12"
+                    android:id="@+id/button6"
                     android:text="diarrhea"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -216,10 +216,11 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button13"
+                    android:id="@+id/button7"
                     android:text="flu"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
+
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="2dp"
@@ -227,18 +228,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button14"
-                    android:text="chills"
-                    android:textColor="@android:color/white"
-                    android:backgroundTint="#009688"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:background="@android:color/white" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/button15"
+                    android:id="@+id/button9"
                     android:text="congestion or a sore throat"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -249,7 +239,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button16"
+                    android:id="@+id/button10"
                     android:text="cough"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -260,7 +250,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button17"
+                    android:id="@+id/button11"
                     android:text="intense itching"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"/>
@@ -271,7 +261,7 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/button18"
+                    android:id="@+id/button12"
                     android:text="dry skin"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#009688"

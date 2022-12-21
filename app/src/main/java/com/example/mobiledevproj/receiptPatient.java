@@ -2,6 +2,7 @@ package com.example.mobiledevproj;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,8 +16,9 @@ public class receiptPatient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_15);
-
-
+        double[] prices = getIntent().getDoubleArrayExtra("prices");
+        String[] names = getIntent().getStringArrayExtra("names");
+        Log.d("success", prices.toString());
         Button btn1, btn2;
         String hi_name =getIntent().getStringExtra("name");
         TextView hello=findViewById(R.id.name);
