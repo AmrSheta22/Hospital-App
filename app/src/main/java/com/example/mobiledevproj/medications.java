@@ -1,31 +1,39 @@
 package com.example.mobiledevproj;
 
+
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class medications extends AppCompatActivity {
-    EditText editTextName;
+    TextView editTextName;
     Button btn;
     //DatabaseReference ref;
-    DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference("writtenmed");
+    DatabaseReference ref = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
     ListView listViewWritten;
 
     List<writtenmeds> writtenList;
@@ -42,7 +50,7 @@ public class medications extends AppCompatActivity {
         hello.setText(hi_name);
 
 
-        editTextName = findViewById(R.id.item1);
+        editTextName=findViewById(R.id.item1);
 
         listViewWritten =findViewById(R.id.listViewWritten);
 
@@ -70,6 +78,57 @@ public class medications extends AppCompatActivity {
         prof.setOnClickListener(view -> {
             Intent i = new Intent(this, p_p_p.class);
             startActivity(i);
+        });
+        Query query1=ref.child("medication");
+        Log.d("hi","ahmed");
+        query1.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("ResourceType")
+            @Override
+
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+                    Log.d("hi","mona");
+
+
+
+                    LinearLayout myLayout = findViewById(R.id.linear);
+                    for (DataSnapshot i:snapshot.getChildren()){
+                            LinearLayout parent = new LinearLayout(medications.this);
+                            parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+                            parent.setOrientation(LinearLayout.HORIZONTAL);
+                            //setContentView(parent);
+                            TextView textView = new TextView(medications.this);
+                            textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT));
+                            textView.setText(i.child("name").getValue().toString());
+                            Button button = new Button(medications.this);
+                            button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+                            button.setId(Integer.parseInt(i.child("id").getValue().toString()));
+                            TextView textView2 = new TextView(medications.this);
+                            textView2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+                            textView.setText("0");
+                            textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
+                            Button button2 = new Button(medications.this);
+                            button2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT));
+                            button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
+                            parent.addView(textView);
+                            parent.addView(textView2);
+                            parent.addView(button);
+                            parent.addView(button2);
+                            myLayout.addView(parent);}
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
     }
 
