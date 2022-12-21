@@ -31,6 +31,13 @@ public class Doctor {
         this.age = age;
 
     }
+    public String getDoctor() {
+        return id;
+    }
+
+    public void setDoctor(String id) {
+        this.id = id;
+    }
 
 
 }
