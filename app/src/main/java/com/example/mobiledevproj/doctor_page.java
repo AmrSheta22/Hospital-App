@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class doctor_page extends AppCompatActivity {
     String pat;
     String nam;
     String ord;
+    long number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +42,26 @@ public class doctor_page extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DataSnapshot fc = snapshot.getChildren().iterator().next();
+                if(snapshot.exists())
+                    number = snapshot.getChildrenCount();
+                    DataSnapshot fc = snapshot.getChildren().iterator().next();
 
-                pat = String.valueOf(fc.child("patientID").getValue());
-                ord = String.valueOf(fc.getRef().getKey());
-                reff = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("users").child(pat).child("name");
-                reff.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        nam = dataSnapshot.getValue(String.class);
-                    }
+                    pat = String.valueOf(fc.child("patientID").getValue());
+                    ord = String.valueOf(fc.getRef().getKey());
+                    reff = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("users").child(pat).child("name");
+                    reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if(snapshot.exists())
+                            nam = dataSnapshot.getValue(String.class);
+                        }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Log.d("sdsd","asdasdasd");
 
-                    }
-                });
+                        }
+                    });
             }
 
 
@@ -76,7 +82,9 @@ public class doctor_page extends AppCompatActivity {
         ImageButton next;
         next=findViewById(R.id.nextnum);
         next.setOnClickListener(view -> {
-            //ref.child(ord).setValue(null);
+            if(number>1){
+                ref.child(ord).setValue(null);
+            }
             TextView txt1 = findViewById(R.id.info);
             txt1.setText(String.valueOf(ord));
             TextView txt2 = findViewById(R.id.pname);

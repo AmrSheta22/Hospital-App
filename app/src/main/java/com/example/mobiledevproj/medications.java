@@ -30,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-//
+
 public class medications extends AppCompatActivity {
     Button btn;
     //DatabaseReference ref;
