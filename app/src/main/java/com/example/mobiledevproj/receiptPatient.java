@@ -78,8 +78,6 @@ public class receiptPatient extends AppCompatActivity {
         tableLayout.addView(tr_head, new TableLayout.LayoutParams(
                 FILL_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT));
-
-
         Button btn1, btn2;
         String hi_name =getIntent().getStringExtra("name");
         TextView hello=findViewById(R.id.name);

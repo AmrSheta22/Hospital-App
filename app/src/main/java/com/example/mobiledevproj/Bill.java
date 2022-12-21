@@ -53,5 +53,5 @@ public class Bill {
 //meds contain list of ids (medication nodes)
 //String[] meds = {"1", "2"};
 //List nameList = new ArrayList<String>(Arrays.asList(meds));
-//Bill d2 = new Bill("id",nameList, "1", "1");
-//ref.child("Bill").child("2").setValue(d2);
+
+
