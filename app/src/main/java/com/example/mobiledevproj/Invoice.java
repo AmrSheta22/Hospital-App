@@ -34,6 +34,5 @@ public class Invoice extends AppCompatActivity {
             Intent i = new Intent(this, p_p_p.class);
             startActivity(i);
         });
-        }
-
+    }
 }
