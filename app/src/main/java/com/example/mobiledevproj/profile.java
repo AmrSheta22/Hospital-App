@@ -89,7 +89,11 @@ public class profile extends AppCompatActivity {
         TextView yor;
         yor=findViewById(R.id.q2_info);
         yor.setOnClickListener(view -> {
-            yor.setText("Your Number: "+String.valueOf(keys));
+            if(String.valueOf(keys)=="null") {
+                yor.setText("Book Now");
+            }else {
+                yor.setText("Your Number: " + String.valueOf(keys));
+            }
         });
 
         ImageButton btn;

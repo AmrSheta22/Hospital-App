@@ -97,7 +97,7 @@
             android:background="#5C5C5C" />
         <LinearLayout
 
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
 
@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="mariam"
+                        android:text="XXXXXX"
                         android:textSize="25sp"
                         android:textStyle="normal" />
                 </LinearLayout>

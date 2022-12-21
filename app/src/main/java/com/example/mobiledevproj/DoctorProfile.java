@@ -34,7 +34,7 @@ public class DoctorProfile extends AppCompatActivity {
     DatabaseReference ref;
     Button btn;
     ImageView doctorImage;
-    Appointment appointment;
+    long ord;
     long number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,15 +77,17 @@ public class DoctorProfile extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists())
+                if(snapshot.exists())  {
+                    DataSnapshot fc = snapshot.getChildren().iterator().next();
+                    ord = Long.parseLong(fc.getRef().getKey());
                     number= snapshot.getChildrenCount();
 
-            }
+                }}
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
+                }
         });
         //////////
         Log.d("high",String.valueOf(number));
@@ -93,8 +95,8 @@ public class DoctorProfile extends AppCompatActivity {
         btn.setOnClickListener(view -> {
             //////////
             String wd=FirebaseAuth.getInstance().getCurrentUser().getUid();
-            Appointment appo = new Appointment(2, wd, "8oXXtLd3PCYICocHrIonh3Nos612");
-            ref.child(String.valueOf(number+1)).setValue(appo);
+            Appointment appo = new Appointment((int) (number+ord), wd, "8oXXtLd3PCYICocHrIonh3Nos612");
+            ref.child(String.valueOf(number+ord)).setValue(appo);
             Toast.makeText(getApplicationContext(), "Successfully Booked", Toast.LENGTH_SHORT).show();
             //////////
             Intent i = new Intent(DoctorProfile.this, Departments.class);

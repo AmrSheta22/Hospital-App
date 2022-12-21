@@ -38,7 +38,7 @@ public class Symptoms extends AppCompatActivity {
                 startActivity(i);
             }
         };
-
+//buttons
 
         Button b1 = findViewById(R.id.button1);
         Button b2 = findViewById(R.id.button2);
