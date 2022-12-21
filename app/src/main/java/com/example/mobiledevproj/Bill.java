@@ -39,6 +39,7 @@ public class Bill {
         return pharmacistID;
     }
 
+
     public List getMedications() {
         return medications;
     }
