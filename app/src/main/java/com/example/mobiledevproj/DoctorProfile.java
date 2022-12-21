@@ -2,6 +2,8 @@ package com.example.mobiledevproj;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,11 +14,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,10 +46,23 @@ public class DoctorProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_profile);
+
+
+        TextView docName = findViewById(R.id.drName);
+        TextView depart = findViewById(R.id.dep_name);
+        TextView NoOfPatient = findViewById(R.id.Num_patient);
+        TextView rates = findViewById(R.id.rate);
+        TextView Experience = findViewById(R.id.year);
+
         String hi_name =getIntent().getStringExtra("name");
         TextView hello=findViewById(R.id.name);
         hello.setText(hi_name);
         doctorImage = findViewById(R.id.imageView2);
+        ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) doctorImage.getLayoutParams();
+        params.height = 650;
+        params.width = 650;
+        doctorImage.setLayoutParams(params);
+
         FirebaseStorage storageRef = FirebaseStorage.getInstance("gs://hospital-app-be6c3.appspot.com");
 
         // change image of the image view of doctor image to the one in the reference
@@ -118,5 +137,26 @@ public class DoctorProfile extends AppCompatActivity {
             Intent i = new Intent(this, p_p_p.class);
             startActivity(i);
         });
+        DatabaseReference ref1 = FirebaseDatabase.getInstance("https://hospital-app-be6c3-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+        String id = getIntent().getStringExtra("Id");
+        ref1.child("doctors").child(id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                } else {
+                    Doctor d = task.getResult().getValue(Doctor.class);
+
+                    docName.setText(d.name);
+                    depart.setText(d.department);
+                    NoOfPatient.setText(d.numberOfPatients+"");
+                    rates.setText((int) d.rating+"");
+                    Experience.setText(d.yearsOfExp+"");
+
+                }
+            }
+        });
+
+
     }
 }
