@@ -23,11 +23,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class medications2 extends AppCompatActivity {
     Button btn;
@@ -76,7 +79,8 @@ public class medications2 extends AppCompatActivity {
                 TextView txt = findViewById(s+100);
                 String new_number = Integer.toString(Integer.parseInt(txt.getText().toString())+1);
                 txt.setText(new_number);
-                names.add(all_names.get(s-100-1));
+                String name = all_names.get(s-100-1);
+                names.add(name);
                 prices.add(all_prices.get(s-100-1));
                 Log.d("array string", names.toString());
             }
@@ -111,77 +115,81 @@ public class medications2 extends AppCompatActivity {
 
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int children = (int) snapshot.getChildrenCount();
-                int[] plus_buttons = new int[children];
-                int[] minus_buttons = new int[children];
+                ArrayList<Integer> plus_buttons = new ArrayList<Integer>();
+                ArrayList<Integer> minus_buttons = new ArrayList<Integer>();
                 if (snapshot.exists()) {
                     Log.d("hi","mona");
                     LinearLayout myLayout = findViewById(R.id.linear);
+                    int count = 0;
+                    for (DataSnapshot i:snapshot.getChildren()){
+                        HashMap med= (HashMap) i.getValue();
+                        List lis = (List) med.get("diseases");
+                        Log.d("my dick", med.toString());
+                        //ArrayList<String> meds = (ArrayList<String>) med.diseases;
+                        if(lis.contains(symptom)){
+                        // commit not working
+                            LinearLayout parent = new LinearLayout(medications2.this);
+                            parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+                            parent.setOrientation(LinearLayout.HORIZONTAL);
+                            //setContentView(parent);
+                            TextView textView = new TextView(medications2.this);
+                            textView.setLayoutParams(new LinearLayout.LayoutParams(300, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            textView.setText(i.child("name").getValue().toString());
+                            textView.setId(Integer.parseInt(i.child("id").getValue().toString())+300);
+                            textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
+                            textView.setTextColor(Color.parseColor("#019874"));
+                            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
+                            textView.setTypeface(null, Typeface.BOLD);
 
-                        int count = 0;
-                        for (DataSnapshot i:snapshot.getChildren()){
-                            Medication med=i.getValue(Medication.class);
-                            if(med.diseases.contains(symptom)){
-                            // commit not working
-                                LinearLayout parent = new LinearLayout(medications2.this);
-                                parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-                                parent.setOrientation(LinearLayout.HORIZONTAL);
-                                //setContentView(parent);
-                                TextView textView = new TextView(medications2.this);
-                                textView.setLayoutParams(new LinearLayout.LayoutParams(300, LinearLayout.LayoutParams.WRAP_CONTENT));
-                                textView.setText(i.child("name").getValue().toString());
-                                textView.setId(Integer.parseInt(i.child("id").getValue().toString())+300);
-                                textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
-                                textView.setTextColor(Color.parseColor("#019874"));
-                                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
-                                textView.setTypeface(null, Typeface.BOLD);
+                            Button button = new Button(medications2.this);
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.WRAP_CONTENT, 100);
+                            button.setLayoutParams(params);
+                            button.setBackgroundTintList(ColorStateList.valueOf(button.getContext().getResources().getColor(R.color.my_color)));
+                            button.setId(Integer.parseInt(i.child("id").getValue().toString()));
+                            button.setText("-");
+                            TextView textView2 = new TextView(medications2.this);
+                            textView2.setLayoutParams(new LinearLayout.LayoutParams(100,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT));
+                            textView2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
+                            textView2.setTextColor(Color.parseColor("#019874"));
+                            textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
+                            textView2.setTypeface(null, Typeface.BOLD);
+                            textView2.setText("0");
+                            textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
+                            textView2.setGravity(Gravity.CENTER);
 
-                                Button button = new Button(medications2.this);
-                                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.WRAP_CONTENT, 100);
-                                button.setLayoutParams(params);
-                                button.setBackgroundTintList(ColorStateList.valueOf(button.getContext().getResources().getColor(R.color.my_color)));
-                                button.setId(Integer.parseInt(i.child("id").getValue().toString()));
-                                button.setText("-");
-                                TextView textView2 = new TextView(medications2.this);
-                                textView2.setLayoutParams(new LinearLayout.LayoutParams(100,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                                textView2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
-                                textView2.setTextColor(Color.parseColor("#019874"));
-                                textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
-                                textView2.setTypeface(null, Typeface.BOLD);
-                                textView2.setText("0");
-                                textView2.setId(Integer.parseInt(i.child("id").getValue().toString())+200);
-                                textView2.setGravity(Gravity.CENTER);
+                            Button button2 = new Button(medications2.this);
 
-                                Button button2 = new Button(medications2.this);
+                            LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params2.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                            params2.width = 2;
+                            params2.weight = 1;
+                            button2.setLayoutParams(params);
+                            button2.setBackgroundTintList(ColorStateList.valueOf(button2.getContext().getResources().getColor(R.color.my_color)));
+                            button2.setText("+");
+                            button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
+                            parent.addView(textView);
+                            parent.addView(button);
+                            parent.addView(textView2);
+                            parent.addView(button2);
+                            myLayout.addView(parent);
+                            minus_buttons.add(Integer.parseInt(i.child("id").getValue().toString()));
+                            plus_buttons.add(Integer.parseInt(i.child("id").getValue().toString())+100);
+                            count+=1;
+                            all_names.add(i.child("name").getValue().toString());
+                            all_prices.add(Double.parseDouble(i.child("price").getValue().toString()));}
 
-                                LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT);
-                                params2.height = LinearLayout.LayoutParams.WRAP_CONTENT;
-                                params2.width = 2;
-                                params2.weight = 1;
-                                button2.setLayoutParams(params);
-                                button2.setBackgroundTintList(ColorStateList.valueOf(button2.getContext().getResources().getColor(R.color.my_color)));
-                                button2.setText("+");
-                                button2.setId(Integer.parseInt(i.child("id").getValue().toString())+100);
-                                parent.addView(textView);
-                                parent.addView(button);
-                                parent.addView(textView2);
-                                parent.addView(button2);
-                                myLayout.addView(parent);
-                                minus_buttons[count] = Integer.parseInt(i.child("id").getValue().toString());
-                                plus_buttons[count] = Integer.parseInt(i.child("id").getValue().toString())+100;
-                                count+=1;
-                                all_names.add(i.child("name").getValue().toString());
-                                all_prices.add(Double.parseDouble(i.child("price").getValue().toString()));}
-
+                }
+                if (plus_buttons.size() != 0) {
+                    for (int i = 0; i < plus_buttons.size(); i++) {
+                        findViewById(plus_buttons.get(i)).setOnClickListener(plus_listener);
                     }
-                    Log.d("hi", Arrays.toString(plus_buttons));
-                    for (int i= 0; i < children; i++){
-                        findViewById(plus_buttons[i]).setOnClickListener(plus_listener);
+                    for (int i = 0; i < plus_buttons.size(); i++) {
+                        findViewById(minus_buttons.get(i)).setOnClickListener(minus_listener);
                     }
-                    for (int i= 0; i < children; i++){
-                        findViewById(minus_buttons[i]).setOnClickListener(minus_listener);
-                    }
+
+                }
                 }
             }
 
