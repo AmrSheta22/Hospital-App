@@ -76,6 +76,7 @@ public class doctor_page extends AppCompatActivity {
         ImageButton next;
         next=findViewById(R.id.nextnum);
         next.setOnClickListener(view -> {
+            //ref.child(ord).setValue(null);
             TextView txt1 = findViewById(R.id.info);
             txt1.setText(String.valueOf(ord));
             TextView txt2 = findViewById(R.id.pname);
