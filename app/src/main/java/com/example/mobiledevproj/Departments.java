@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 
 public class Departments extends AppCompatActivity {
 
@@ -33,7 +35,7 @@ public class Departments extends AppCompatActivity {
                 String id = "textView"+s.substring(s.length() -1);
                 int resID = getResources().getIdentifier(id, "id", getPackageName());
                 TextView txt = findViewById(resID);
-                i.putExtra("btnText", txt.getText().toString());
+                i.putExtra("btnText", txt.getText().toString().toLowerCase(Locale.ROOT));
                 i.putExtra("name",hi_name);
                 startActivity(i);
             }
