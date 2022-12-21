@@ -82,6 +82,7 @@ public class medications extends AppCompatActivity {
                     Log.d("hi","mona");
                     LinearLayout myLayout = findViewById(R.id.linear);
                     for (DataSnapshot i:snapshot.getChildren()){
+                        // commit not working
                         LinearLayout parent = new LinearLayout(medications.this);
                         parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
                         parent.setOrientation(LinearLayout.HORIZONTAL);
