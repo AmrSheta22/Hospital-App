@@ -26,7 +26,26 @@ public class Bill {
         this.patientID = patientID ;
         this.medications = medications;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getPharmacistID() {
+        return pharmacistID;
+    }
+
+    public List getMedications() {
+        return medications;
+    }
 }
+
+
+
 //Bill d1 = new Bill("id", "/here/", "1", "1");
 //ref.child("Bill").child("1").setValue(d1);
 
