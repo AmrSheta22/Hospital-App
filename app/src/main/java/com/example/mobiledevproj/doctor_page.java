@@ -49,7 +49,6 @@ public class doctor_page extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         nam = dataSnapshot.getValue(String.class);
-                        //do what you want with the email
                     }
 
                     @Override
