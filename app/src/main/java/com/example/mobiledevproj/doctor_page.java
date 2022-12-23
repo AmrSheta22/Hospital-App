@@ -52,8 +52,9 @@ public class doctor_page extends AppCompatActivity {
                     reff.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            if(snapshot.exists())
-                            nam = dataSnapshot.getValue(String.class);
+                            if(snapshot.exists()) {
+                                nam = dataSnapshot.getValue(String.class);
+                            }
                         }
 
                         @Override

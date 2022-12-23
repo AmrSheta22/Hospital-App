@@ -102,14 +102,6 @@
                     android:orientation="horizontal"
                     android:weightSum="3">
 
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="60dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/ic_baseline_arrow_left_24" />
-
                     <TextView
                         android:id="@+id/info"
                         android:layout_width="wrap_content"
@@ -118,10 +110,11 @@
                         android:layout_weight="1"
                         android:background="@drawable/shadow"
                         android:padding="20dp"
-                        android:text="xxxxxxx"
+                        android:text="0"
                         android:textSize="40sp" />
 
                     <ImageButton
+                        android:id="@+id/next"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="60dp"
@@ -153,8 +146,9 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/nameee"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="mariam"
                             android:textSize="25sp"

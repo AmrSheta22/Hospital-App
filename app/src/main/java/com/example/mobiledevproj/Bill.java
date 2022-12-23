@@ -1,5 +1,6 @@
 package com.example.mobiledevproj;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Bill {
@@ -7,7 +8,7 @@ public class Bill {
     public String image_path;
     public String patientID;
     public String pharmacistID;
-    public List medications; //id
+    public ArrayList<String> medications; //id
     // id is incremental so we don't need number of appointment
     // hi hi
     // hi hi captin
@@ -20,29 +21,14 @@ public class Bill {
         this.patientID = patientID ;
         this.pharmacistID = pharmacistID;
     }
-    public Bill(String id, List medications, String patientID, String pharmacistID) {
+    public Bill(String id, ArrayList<String> medications, String patientID, String pharmacistID) {
         this.id = id;
         this.pharmacistID = pharmacistID;
         this.patientID = patientID ;
         this.medications = medications;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public String getPatientID() {
-        return patientID;
-    }
-
-    public String getPharmacistID() {
-        return pharmacistID;
-    }
-
-
-    public List getMedications() {
-        return medications;
-    }
 }
 
 

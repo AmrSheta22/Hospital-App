@@ -8,12 +8,12 @@ import java.util.List;
         public String id;
         public String name;
         public double price;
-        public List diseases;
+        public ArrayList<String> diseases;
 
     public Medication() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
-    public Medication(String id, String patientID, double price, List diseases) {
+    public Medication(String id, String patientID, double price, ArrayList<String> diseases) {
         this.id = id;
         this.name = patientID;
         this.price = price;

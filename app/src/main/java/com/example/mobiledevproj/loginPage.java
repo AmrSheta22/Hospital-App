@@ -15,6 +15,8 @@ import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -90,57 +92,53 @@ public class loginPage extends AppCompatActivity {
                                                 }
                                                 else {
                                                     String[] diseases1 = {"headache"} ;
-                                                    List nameList1 = new ArrayList<String>(Arrays.asList(diseases1));
+                                                    ArrayList<String> nameList1 = new ArrayList<String>(Arrays.asList(diseases1));
                                                     Medication m1 = new Medication("1", " Aspirin ", 20.0, nameList1);
                                                     ref.child("medication").child("1").setValue(m1);
                                                     String[] diseases2 = {"stomach cramps"};
-                                                    List nameList2 = new ArrayList<String>(Arrays.asList(diseases2));
+                                                    ArrayList<String> nameList2 = new ArrayList<String>(Arrays.asList(diseases2));
                                                     Medication m2 = new Medication("2", " Buscopan ", 17.0, nameList2);
                                                     ref.child("medication").child("2").setValue(m2);
                                                     String[] diseases3 = {"fever"};
-                                                    List nameList3 = new ArrayList<String>(Arrays.asList(diseases3));
+                                                    ArrayList<String> nameList3 = new ArrayList<String>(Arrays.asList(diseases3));
                                                     Medication m3 = new Medication("3", " pandol extra ", 25.0, nameList3);
                                                     ref.child("medication").child("3").setValue(m3);
                                                     String[] diseases4 = {"arthritis"};
-                                                    List nameList4 = new ArrayList<String>(Arrays.asList(diseases4));
+                                                    ArrayList<String> nameList4 = new ArrayList<String>(Arrays.asList(diseases4));
                                                     Medication m4= new Medication("4", " arythrex ",19.0, nameList4);
                                                     ref.child("medication").child("4").setValue(m4);
 
 
                                                     String[] diseases5 = {"allergie","intense itching"};
-                                                    List nameList5 = new ArrayList<String>(Arrays.asList(diseases5));
+                                                    ArrayList<String> nameList5 = new ArrayList<String>(Arrays.asList(diseases5));
                                                     Medication m5= new Medication("5", " claritine ",22.0, nameList5);
                                                     ref.child("medication").child("5").setValue(m5);
 
                                                     String[] diseases6 = {"diarrhea"};
-                                                    List nameList6 = new ArrayList<String>(Arrays.asList(diseases6));
+                                                    ArrayList<String> nameList6 = new ArrayList<String>(Arrays.asList(diseases6));
                                                     Medication m6= new Medication("6", " antinal ",14.0, nameList6);
                                                     ref.child("medication").child("6").setValue(m6);
 
                                                     String[] diseases7 = {"flu"};
-                                                    List nameList7 = new ArrayList<String>(Arrays.asList(diseases7));
+                                                    ArrayList<String> nameList7 = new ArrayList<String>(Arrays.asList(diseases7));
                                                     Medication m7= new Medication("7", " panadol ",23.0, nameList7);
                                                     ref.child("medication").child("7").setValue(m7);
 
                                                     String[] diseases8= {"congestion or a sore throat"};
-                                                    List nameList8 = new ArrayList<String>(Arrays.asList(diseases8));
+                                                    ArrayList<String> nameList8 = new ArrayList<String>(Arrays.asList(diseases8));
                                                     Medication m8= new Medication("8", " sinus Relief ",28.0, nameList8);
                                                     ref.child("medication").child("8").setValue(m8);
 
                                                     String[] diseases9= {"cough"};
-                                                    List nameList9 = new ArrayList<String>(Arrays.asList(diseases9));
+                                                    ArrayList<String> nameList9 = new ArrayList<String>(Arrays.asList(diseases9));
                                                     Medication m9= new Medication("9", " oplex ",33.0, nameList9);
                                                     ref.child("medication").child("9").setValue(m9);
 
                                                     String[] diseases10= {"dry skin"};
-                                                    List nameList10 = new ArrayList<String>(Arrays.asList(diseases10));
+                                                    ArrayList<String> nameList10 = new ArrayList<String>(Arrays.asList(diseases10));
 
                                                     Medication m10= new Medication("9", " cerave ",45.0, nameList10);
                                                     ref.child("medication").child("10").setValue(m10);
-
-
-
-
 
 
 
